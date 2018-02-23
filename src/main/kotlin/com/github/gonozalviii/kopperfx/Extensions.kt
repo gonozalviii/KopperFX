@@ -1,4 +1,4 @@
-package io.kopper
+package com.github.gonozalviii.kopperfx
 
 import javafx.beans.value.ObservableValue
 import javafx.beans.value.WritableValue

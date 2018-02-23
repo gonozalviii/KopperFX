@@ -1,4 +1,4 @@
-package io.kopper
+package com.github.gonozalviii.kopperfx
 
 import javafx.animation.AnimationTimer
 import javafx.application.Platform
