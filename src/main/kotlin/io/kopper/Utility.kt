@@ -1,0 +1,136 @@
+package io.kopper
+
+import javafx.animation.AnimationTimer
+import javafx.application.Platform
+import javafx.concurrent.Service
+import javafx.concurrent.Task
+import javafx.fxml.FXMLLoader
+import javafx.scene.Node
+import java.util.concurrent.Executor
+import kotlin.reflect.KClass
+
+
+/**
+ * Utility
+ */
+
+
+fun fxThread(block: () -> Unit) = Platform.runLater { block() }
+
+fun animationTimer(start: Boolean = true, block: () -> Unit): AnimationTimer {
+    return object : AnimationTimer() {
+        override fun handle(now: Long) {
+            block()
+        }
+    }.apply {
+        if (start) start()
+    }
+}
+
+fun loadFXML(url: String, controllerFactory: ((Class<*>) -> Any)? = null): Node {
+    val loader = FXMLLoader(KClass::class.java.getResource(url))
+    if (controllerFactory != null) {
+        loader.setControllerFactory(controllerFactory)
+    }
+    return loader.load()
+}
+
+fun <T> task(block: TaskWrapper<T>.() -> T): Task<T> {
+    return TaskWrapper<T>().apply {
+        block()
+    }.task
+}
+
+class DslTask<T> : Task<T>() {
+
+    internal var callBlock: () -> T = { throw RuntimeException("nothing to execute for this task") }
+
+    override fun call(): T {
+        return callBlock()
+    }
+
+    fun updateTaskProgress(workDone: Double, max: Double) {
+        super.updateProgress(workDone, max)
+    }
+
+    fun updateTaskMessage(message: String) {
+        super.updateMessage(message)
+    }
+
+    fun setTaskException(value: Throwable?) {
+        super.setException(value)
+    }
+}
+
+class TaskWrapper<T> {
+    val task = DslTask<T>()
+
+    var progressMax = 1.0
+    var progress
+        get() = task.progress
+        set(value) = task.updateTaskProgress(value, progressMax)
+
+    var message
+        get() = task.message
+        set(value) = task.updateTaskMessage(value)
+
+    var exception: Throwable?
+        get() = task.exception
+        set(value) = task.setTaskException(value)
+
+    fun execute(block: () -> T) {
+        task.callBlock = block
+    }
+    fun onScheduled(block: () -> Unit) {
+        task.setOnScheduled { block() }
+    }
+    fun onCancelled(block:  () -> Unit) {
+        task.setOnCancelled { block() }
+    }
+    fun onFailed(block: () -> Unit) {
+        task.setOnFailed { block() }
+    }
+    fun onRunning(block: () -> Unit) {
+        task.setOnRunning { block() }
+    }
+    fun onSucceeded(block: () -> Unit) {
+        task.setOnSucceeded { block() }
+    }
+
+}
+
+
+fun <T> service(executor: Executor? = null, block: () -> Task<T> = { EmptyTask() }): DslService<T> {
+    return DslService(executor, block)
+}
+
+class EmptyTask<T> : Task<T>() {
+    override fun call(): T {
+        throw RuntimeException("task is empty")
+    }
+}
+
+class DslService<T>(executor: Executor?, createTask: () -> Task<T>) : Service<T>() {
+
+    private var task: Task<T> = createTask()
+
+    init {
+        if (executor != null) {
+            this.executor = executor
+        }
+    }
+    override fun createTask(): Task<T> {
+        return task
+    }
+
+    fun restart(task: Task<T>) {
+        this.task = task
+        super.restart()
+    }
+
+    fun start(task: Task<T>) {
+        this.task = task
+        super.start()
+    }
+
+}
