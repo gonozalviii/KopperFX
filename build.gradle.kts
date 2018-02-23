@@ -1,4 +1,8 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.types.checker.captureFromArguments
+
+group = "io.kopper"
+version = "0.1"
 
 plugins {
     kotlin("jvm") version "1.2.21"
@@ -20,4 +24,14 @@ tasks {
     withType<Wrapper> {
         gradleVersion = "4.5.1"
     }
+
+    "sourcesJar"(Jar::class) {
+        classifier = "sources"
+        from(java.sourceSets["main"].allSource)
+        dependsOn("classes")
+    }
+}
+
+artifacts {
+    add("archives", tasks["sourcesJar"])
 }
