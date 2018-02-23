@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.jetbrains.kotlin.types.checker.captureFromArguments
 
 group = "com.github.gonozalviii"
-version = "0.1"
+version = "0.1.1"
 
 plugins {
     kotlin("jvm") version "1.2.21"
@@ -33,6 +33,12 @@ tasks {
     }
 }
 
-artifacts {
-    add("archives", tasks["sourcesJar"])
+publishing {
+    (publications) {
+        "mavenJava"(MavenPublication::class) {
+            from(components["java"])
+            artifact(tasks["sourcesJar"])
+        }
+    }
 }
+
