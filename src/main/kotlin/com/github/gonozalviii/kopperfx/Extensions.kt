@@ -7,6 +7,7 @@ import javafx.scene.Node
 import javafx.scene.control.ChoiceBox
 import javafx.scene.control.ComboBox
 import javafx.scene.control.TableView
+import javafx.scene.control.TreeItem
 import javafx.scene.image.Image
 import javafx.scene.layout.Pane
 import javafx.stage.FileChooser
@@ -49,6 +50,23 @@ fun Pane.clear() = this.children.clear()
 fun Pane.addAll(vararg nodes: Node) = this.children.addAll(nodes)
 
 fun Pane.removeAll(vararg nodes: Node) = this.children.removeAll(nodes)
+
+
+/**
+ * TreeItem
+ */
+operator fun <T> TreeItem<T>.plusAssign(child: TreeItem<T>) {
+    this.children += child
+}
+operator fun <T> TreeItem<T>.minusAssign(child: TreeItem<T>) {
+    this.children -= child
+}
+fun <T> TreeItem<T>.addAll(vararg children: TreeItem<T>) {
+    this.children.addAll(children)
+}
+fun <T> TreeItem<T>.removeAll(vararg children: TreeItem<T>) {
+    this.children.removeAll(children)
+}
 
 /**
  * TableView
