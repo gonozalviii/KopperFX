@@ -260,6 +260,25 @@ fun Accordion.removeAll(vararg panes: TitledPane) {
 }
 
 /**
+ * MenuBar
+ */
+operator fun MenuBar.plusAssign(menu: Menu) {
+    this.menus += menu
+}
+
+operator fun MenuBar.minusAssign(menu: Menu) {
+    this.menus -= menu
+}
+
+fun MenuBar.addAll(vararg menues: Menu) {
+    this.menus.addAll(menues)
+}
+
+fun MenuBar.removeAll(vararg menues: Menu) {
+    this.menus.removeAll(menues)
+}
+
+/**
  * Other
  */
 fun FileChooser.addExtensionFilter(description: String, vararg extensions: String) {
