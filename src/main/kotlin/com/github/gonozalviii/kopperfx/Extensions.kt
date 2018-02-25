@@ -114,6 +114,41 @@ var <T> TableView<T>.selectedItem: T
     set(item) = this.selectionModel.select(item)
 
 /**
+ * ListView
+ */
+operator fun <T> ListView<T>.plusAssign(item: T) {
+    this.items.toMutableList() += item
+}
+
+operator fun <T> ListView<T>.minusAssign(item: T) {
+    this.items.toMutableList() -= item
+}
+
+fun <T> ListView<T>.add(index: Int, item: T) {
+    this.items.add(index, item)
+}
+
+fun <T> ListView<T>.removeAt(index: Int) {
+    this.items.removeAt(index)
+}
+
+var <T> ListView<T>.focusedIndex: Int
+    get() = this.focusModel.focusedIndex
+    set(index) = this.focusModel.focus(index)
+
+fun <T> ListView<T>.getFocusedItem(index: Int) = this.focusModel.focusedItem
+
+fun <T> ListView<T>.focusNext() = this.focusModel.focusNext()
+
+fun <T> ListView<T>.focusPrevious() = this.focusModel.focusPrevious()
+
+fun <T> ListView<T>.isFocused(index: Int) = this.focusModel.isFocused(index)
+
+fun <T> ListView<T>.selectItem(item: T) = this.selectionModel.select(item)
+
+fun <T> ListView<T>.selectIndex(index: Int) = this.selectionModel.select(index)
+
+/**
  * ChoiceBox
  */
 operator fun <T> ChoiceBox<T>.plusAssign(item: T) {
