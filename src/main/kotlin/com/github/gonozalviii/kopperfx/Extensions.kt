@@ -136,7 +136,7 @@ var <T> ListView<T>.focusedIndex: Int
     get() = this.focusModel.focusedIndex
     set(index) = this.focusModel.focus(index)
 
-fun <T> ListView<T>.getFocusedItem(index: Int) = this.focusModel.focusedItem
+fun <T> ListView<T>.getFocusedItem() = this.focusModel.focusedItem
 
 fun <T> ListView<T>.focusNext() = this.focusModel.focusNext()
 
