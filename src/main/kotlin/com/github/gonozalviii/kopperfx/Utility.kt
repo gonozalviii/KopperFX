@@ -22,6 +22,10 @@ import javafx.concurrent.Service
 import javafx.concurrent.Task
 import javafx.fxml.FXMLLoader
 import javafx.scene.Node
+import javafx.scene.media.Media
+import javafx.scene.media.MediaPlayer
+import javafx.scene.media.MediaView
+import java.io.File
 import java.util.concurrent.Executor
 import kotlin.reflect.KClass
 
@@ -50,6 +54,17 @@ fun loadFXML(url: String, controllerFactory: ((Class<*>) -> Any)? = null): Node 
         loader.setControllerFactory(controllerFactory)
     }
     return loader.load()
+}
+
+fun mediaPlayer(url: String): MediaPlayer {
+    val media = Media(File(url).toURI().toString())
+    return MediaPlayer(media)
+}
+
+fun mediaView(url: String): MediaView {
+    val media = Media(File(url).toURI().toString())
+    val mediaPlayer = MediaPlayer(media)
+    return MediaView(mediaPlayer)
 }
 
 fun <T> task(block: TaskWrapper<T>.() -> T): Task<T> {
