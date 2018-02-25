@@ -20,10 +20,7 @@ import javafx.beans.value.ObservableValue
 import javafx.beans.value.WritableValue
 import javafx.collections.ObservableList
 import javafx.scene.Node
-import javafx.scene.control.ChoiceBox
-import javafx.scene.control.ComboBox
-import javafx.scene.control.TableView
-import javafx.scene.control.TreeItem
+import javafx.scene.control.*
 import javafx.scene.image.Image
 import javafx.scene.layout.Pane
 import javafx.stage.FileChooser
@@ -74,12 +71,15 @@ fun Pane.removeAll(vararg nodes: Node) = this.children.removeAll(nodes)
 operator fun <T> TreeItem<T>.plusAssign(child: TreeItem<T>) {
     this.children += child
 }
+
 operator fun <T> TreeItem<T>.minusAssign(child: TreeItem<T>) {
     this.children -= child
 }
+
 fun <T> TreeItem<T>.addAll(vararg children: TreeItem<T>) {
     this.children.addAll(children)
 }
+
 fun <T> TreeItem<T>.removeAll(vararg children: TreeItem<T>) {
     this.children.removeAll(children)
 }
@@ -156,6 +156,37 @@ var <T> ComboBox<T>.selectedIndex: Int
     set(index) = this.selectionModel.select(index)
 
 var <T> ComboBox<T>.selectedItem: T
+    get() = this.selectionModel.selectedItem
+    set(item) = this.selectionModel.select(item)
+
+/**
+ * TabPane
+ */
+operator fun TabPane.plusAssign(tab: Tab) {
+    this.tabs += tab
+}
+
+operator fun TabPane.minusAssign(tab: Tab) {
+    this.tabs -= tab
+}
+
+fun TabPane.addAll(vararg tabs: Tab) = this.tabs.addAll(tabs)
+
+fun TabPane.removeAll(vararg tabs: Tab) = this.tabs.removeAll(tabs)
+
+fun TabPane.selectFirst() = this.selectionModel.selectFirst()
+
+fun TabPane.selectLast() = this.selectionModel.selectLast()
+
+fun TabPane.selectNext() = this.selectionModel.selectNext()
+
+fun TabPane.selectPrevious() = this.selectionModel.selectPrevious()
+
+var TabPane.selectedIndex: Int
+    get() = this.selectionModel.selectedIndex
+    set(index) = this.selectionModel.select(index)
+
+var TabPane.selectedItem: Tab
     get() = this.selectionModel.selectedItem
     set(item) = this.selectionModel.select(item)
 
