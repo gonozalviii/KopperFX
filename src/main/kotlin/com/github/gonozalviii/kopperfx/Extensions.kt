@@ -280,6 +280,25 @@ fun MenuBar.removeAll(vararg menues: Menu) {
 }
 
 /**
+ * ButtonBar
+ */
+operator fun ButtonBar.plusAssign(button: Button) {
+    this.buttons += button
+}
+
+operator fun ButtonBar.minusAssign(button: Button) {
+    this.buttons -= button
+}
+
+fun ButtonBar.addAll(vararg buttons: Button) {
+    this.buttons.addAll(buttons)
+}
+
+fun ButtonBar.removeAll(vararg buttons: Button) {
+    this.buttons.removeAll(buttons)
+}
+
+/**
  * Other
  */
 fun FileChooser.addExtensionFilter(description: String, vararg extensions: String) {
