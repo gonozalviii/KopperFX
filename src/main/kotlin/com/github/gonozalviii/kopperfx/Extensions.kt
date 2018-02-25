@@ -226,6 +226,21 @@ var TabPane.selectedItem: Tab
     set(item) = this.selectionModel.select(item)
 
 /**
+ * Toolbar
+ */
+operator fun ToolBar.plusAssign(item: Node) {
+    this.items += item
+}
+
+operator fun ToolBar.minusAssign(item: Node) {
+    this.items -= item
+}
+
+fun ToolBar.addAll(vararg items: Node) = this.items.addAll(items)
+
+fun ToolBar.removeAll(vararg items: Node) = this.items.removeAll(items)
+
+/**
  * Other
  */
 fun FileChooser.addExtensionFilter(description: String, vararg extensions: String) {
