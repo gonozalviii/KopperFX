@@ -20,6 +20,7 @@ import javafx.beans.value.ObservableValue
 import javafx.beans.value.WritableValue
 import javafx.collections.ObservableList
 import javafx.scene.Node
+import javafx.scene.Scene
 import javafx.scene.control.*
 import javafx.scene.image.Image
 import javafx.scene.layout.Pane
@@ -286,3 +287,5 @@ fun FileChooser.addExtensionFilter(description: String, vararg extensions: Strin
 }
 
 fun Stage.addIcons(vararg icons: String) = icons.forEach { this.icons += Image(it) }
+
+fun Scene.addStylesheet(stylesheet: String) = stylesheets.add(stylesheet)
