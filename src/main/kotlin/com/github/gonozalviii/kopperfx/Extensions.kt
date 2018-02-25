@@ -241,6 +241,25 @@ fun ToolBar.addAll(vararg items: Node) = this.items.addAll(items)
 fun ToolBar.removeAll(vararg items: Node) = this.items.removeAll(items)
 
 /**
+ * Accordion
+ */
+operator fun Accordion.plusAssign(pane: TitledPane) {
+    this.panes += pane
+}
+
+operator fun Accordion.minusAssign(pane: TitledPane) {
+    this.panes -= pane
+}
+
+fun Accordion.addAll(vararg panes: TitledPane) {
+    this.panes.addAll(panes)
+}
+
+fun Accordion.removeAll(vararg panes: TitledPane) {
+    this.panes.removeAll(panes)
+}
+
+/**
  * Other
  */
 fun FileChooser.addExtensionFilter(description: String, vararg extensions: String) {
