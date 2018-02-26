@@ -67,7 +67,7 @@ fun mediaView(url: String): MediaView {
     return MediaView(mediaPlayer)
 }
 
-fun <T> task(block: TaskWrapper<T>.() -> T): Task<T> {
+fun <T> task(block: TaskWrapper<T>.() -> Unit): Task<T> {
     return TaskWrapper<T>().apply {
         block()
     }.task
@@ -142,26 +142,25 @@ class EmptyTask<T> : Task<T>() {
     }
 }
 
-class DslService<T>(executor: Executor?, createTask: () -> Task<T>) : Service<T>() {
-
-    private var task: Task<T> = createTask()
+class DslService<T>(executor: Executor? = null, private var createBlock: () -> Task<T>) : Service<T>() {
 
     init {
         if (executor != null) {
             this.executor = executor
         }
     }
+
     override fun createTask(): Task<T> {
-        return task
+        return createBlock()
     }
 
-    fun restart(task: Task<T>) {
-        this.task = task
+    fun restart(createBlock: () -> Task<T>) {
+        this.createBlock = createBlock
         super.restart()
     }
 
-    fun start(task: Task<T>) {
-        this.task = task
+    fun start(createBlock: () -> Task<T>) {
+        this.createBlock = createBlock
         super.start()
     }
 
