@@ -1,5 +1,4 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.jetbrains.kotlin.types.checker.captureFromArguments
 
 group = "com.github.gonozalviii"
 version = "0.3"
@@ -15,6 +14,7 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
+    testImplementation("org.junit.jupiter", "junit-jupiter-engine", "5.1.0")
 }
 
 tasks {
@@ -23,7 +23,7 @@ tasks {
     }
 
     withType<Wrapper> {
-        gradleVersion = "4.5.1"
+        gradleVersion = "4.6-rc-2"
     }
 
     "sourcesJar"(Jar::class) {
@@ -31,6 +31,11 @@ tasks {
         from(java.sourceSets["main"].allSource)
         dependsOn("classes")
     }
+
+    withType<Test>{
+        useJUnitPlatform()
+    }
+
 }
 
 publishing {
