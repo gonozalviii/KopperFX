@@ -95,7 +95,7 @@ class ConcurrencyTest {
 
     @Test
     @DisplayName("create a task wrapped inside a service with custom executor")
-    fun createTaskWithServiceCostumExecutor() {
+    fun createTaskWithServiceCustomExecutor() {
         val integer = AtomicInteger(3)
         val service = service<Unit>(executor) {
             task {

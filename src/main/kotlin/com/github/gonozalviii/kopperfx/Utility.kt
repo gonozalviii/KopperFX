@@ -62,8 +62,7 @@ fun mediaPlayer(url: String): MediaPlayer {
 }
 
 fun mediaView(url: String): MediaView {
-    val media = Media(File(url).toURI().toString())
-    val mediaPlayer = MediaPlayer(media)
+    val mediaPlayer = mediaPlayer(url)
     return MediaView(mediaPlayer)
 }
 

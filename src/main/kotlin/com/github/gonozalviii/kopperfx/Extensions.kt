@@ -133,11 +133,12 @@ fun <T> ListView<T>.removeAt(index: Int) {
     this.items.removeAt(index)
 }
 
-var <T> ListView<T>.focusedIndex: Int
+var <T> ListView<T>.focusedIndex
     get() = this.focusModel.focusedIndex
     set(index) = this.focusModel.focus(index)
 
-fun <T> ListView<T>.getFocusedItem() = this.focusModel.focusedItem
+val <T> ListView<T>.focusedItem
+    get() = this.focusModel.focusedItem
 
 fun <T> ListView<T>.focusNext() = this.focusModel.focusNext()
 
