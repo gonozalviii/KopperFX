@@ -1,6 +1,6 @@
-import com.github.gonozalviii.kopperfx.fxThread
-import com.github.gonozalviii.kopperfx.service
-import com.github.gonozalviii.kopperfx.task
+import com.github.gonozalviii.kopperfx.utility.fxThread
+import com.github.gonozalviii.kopperfx.utility.service
+import com.github.gonozalviii.kopperfx.utility.task
 import javafx.embed.swing.JFXPanel
 import org.junit.jupiter.api.AfterAll
 import org.junit.jupiter.api.Assertions.assertEquals

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.github.gonozalviii.kopperfx
+package com.github.gonozalviii.kopperfx.utility
 
 import javafx.animation.AnimationTimer
 import javafx.application.Platform
@@ -33,8 +33,6 @@ import kotlin.reflect.KClass
 /**
  * Utility
  */
-
-
 fun fxThread(block: () -> Unit) = Platform.runLater { block() }
 
 fun animationTimer(start: Boolean = true, block: () -> Unit): AnimationTimer {
