@@ -64,7 +64,7 @@ class AccordionTest {
 
     @Test
     @DisplayName("addAll on accordion adds all titledpanes")
-    fun addAllAddsAllTitledPane() {
+    fun addAllAddsAllTitledPanes() {
         val accordion = Accordion()
         val titledPane1 = TitledPane()
         val titledPane2 = TitledPane()
@@ -79,7 +79,7 @@ class AccordionTest {
 
     @Test
     @DisplayName("removeAll on accordion removes all titledpanes")
-    fun removeAllRemovesAllTitledPane() {
+    fun removeAllRemovesAllTitledPanes() {
         val accordion = Accordion()
         val titledPane1 = TitledPane()
         val titledPane2 = TitledPane()
