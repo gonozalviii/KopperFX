@@ -59,7 +59,7 @@ class AccordionTest {
 
         accordion -= titledPane
 
-        assertFalse(accordion.panes.contains(titledPane), "accordion should contain titledpane")
+        assertFalse(accordion.panes.contains(titledPane), "accordion should not contain titledpane")
     }
 
     @Test
