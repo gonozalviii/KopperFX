@@ -4,7 +4,7 @@ group = "com.github.gonozalviii"
 version = "0.3"
 
 plugins {
-    kotlin("jvm") version "1.2.21"
+    kotlin("jvm") version "1.2.30"
     `maven-publish`
 }
 
@@ -23,7 +23,7 @@ tasks {
     }
 
     withType<Wrapper> {
-        gradleVersion = "4.6-rc-2"
+        gradleVersion = "4.6"
     }
 
     "sourcesJar"(Jar::class) {
