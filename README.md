@@ -5,10 +5,12 @@ Kotlin Wrapper for JavaFX
 
 ## About
 KopperFX is a Kotlin Wrapper for JavaFX, which is supposed to simplify the use of JavaFX in Kotlin. For this purpose,
-extensions have been written especially for JavaFX. The goal is to be able to write JavaFX so quickly and easily without
-unnecessary intermediate calls.
+extensions have been written especially for JavaFX. The goal is to be able to write JavaFX quickly and easily without
+unnecessary intermediate calls and without changing any core JavaFX concepts.
 
-Please note that KopperFX is far from complete and should not be used for production code yet!
+KopperFX was born in production use and extracted into a separate library as the same extension function 
+were used over and over in different projects. Since then a lot of additional functions and functionality has been
+added. 
 
 ## Usage
 
@@ -16,15 +18,13 @@ To use KopperFX, it can be easily integrated as a dependency:
 
 **Gradle**
 ```
-allprojects {
-    repositories {
-      ...
-      maven { url 'https://jitpack.io' }
-    }
+repositories {
+    ...
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-    compile 'com.github.gonozalviii:KopperFX:0.2'
+    compile 'com.github.gonozalviii:KopperFX:0.3'
 }
 ```
 
@@ -36,7 +36,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.gonozalviii:KopperFX:0.2")
+    implementation("com.github.gonozalviii:KopperFX:0.3")
 }
 ```
 
@@ -52,7 +52,7 @@ dependencies {
 <dependency>
     <groupId>com.github.gonozalviii</groupId>
     <artifactId>KopperFX</artifactId>
-    <version>0.2</version>
+    <version>0.3</version>
 </dependency>
 ```
 
