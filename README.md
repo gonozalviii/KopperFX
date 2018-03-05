@@ -60,6 +60,14 @@ dependencies {
 
 The following examples show the differences between the current usage of JavaFX in Kotlin and the usage with KopperFX.
 
+### Handling JavaFX properties
+```kotlin
+import com.github.gonozalviii.kopperfx.extensions.*
+
+val nameProperty = SimpleStringProperty("")
+var name: String by nameProperty 
+```
+
 ### Adding and removing Children
 
 **Kotlin**
