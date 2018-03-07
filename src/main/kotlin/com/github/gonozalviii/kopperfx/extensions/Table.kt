@@ -34,6 +34,10 @@ fun <T> TableView<T>.addAll(vararg items: T) {
     this.items.addAll(items)
 }
 
+fun <T> TableView<T>.removeAll(vararg items: T) {
+    this.items.removeAll(items)
+}
+
 fun <T> TableView<T>.getSelectedItems() = this.selectionModel.selectedItems
 
 fun <T> TableView<T>.focusIndex(index: Int) = this.focusModel.focus(index)
