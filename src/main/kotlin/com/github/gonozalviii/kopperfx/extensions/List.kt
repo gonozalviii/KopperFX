@@ -50,6 +50,22 @@ fun <T> ListView<T>.removeAt(index: Int) {
     this.items.removeAt(index)
 }
 
+fun <T> ListView<T>.getItemFrom(index: Int) {
+    this.items[index]
+}
+
+fun <T> ListView<T>.addAll(vararg items: T) {
+    this.items.addAll(items)
+}
+
+fun <T> ListView<T>.removeAll(vararg items: T) {
+    this.items.removeAll(items)
+}
+
+fun <T> ListView<T>.removeRange(from: Int, to: Int) {
+    this.items.remove(from, to)
+}
+
 var <T> ListView<T>.focusedIndex
     get() = this.focusModel.focusedIndex
     set(index) = this.focusModel.focus(index)
@@ -66,3 +82,11 @@ fun <T> ListView<T>.isFocused(index: Int) = this.focusModel.isFocused(index)
 fun <T> ListView<T>.selectItem(item: T) = this.selectionModel.select(item)
 
 fun <T> ListView<T>.selectIndex(index: Int) = this.selectionModel.select(index)
+
+fun <T> ListView<T>.selectFirst() = this.selectionModel.selectFirst()
+
+fun <T> ListView<T>.selectLast() = this.selectionModel.selectLast()
+
+fun <T> ListView<T>.selectAll() = this.selectionModel.selectAll()
+
+fun <T> ListView<T>.selectRange(start: Int, end: Int) = this.selectionModel.selectRange(start, end)
