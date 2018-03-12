@@ -32,6 +32,12 @@ operator fun <T> ChoiceBox<T>.minusAssign(item: T) {
 
 fun <T> ChoiceBox<T>.addAll(vararg items: T) = this.items.addAll(items)
 
+fun <T> ChoiceBox<T>.addAt(index: Int, item: T) = this.items.add(index, item)
+
+fun <T> ChoiceBox<T>.removeAt(index: Int) = this.items.removeAt(index)
+
+fun <T> ChoiceBox<T>.removeRange(from: Int, to: Int) = this.items.remove(from, to)
+
 fun <T> ChoiceBox<T>.removeAll(vararg items: T) = this.items.removeAll(items)
 
 var <T> ChoiceBox<T>.selectedIndex: Int
