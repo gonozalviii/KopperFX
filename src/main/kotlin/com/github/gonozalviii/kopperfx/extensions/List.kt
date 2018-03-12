@@ -42,7 +42,7 @@ operator fun <T> ListView<T>.minusAssign(item: T) {
     this.items.remove(item)
 }
 
-fun <T> ListView<T>.add(index: Int, item: T) {
+fun <T> ListView<T>.addAt(index: Int, item: T) {
     this.items.add(index, item)
 }
 
