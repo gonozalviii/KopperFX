@@ -32,6 +32,12 @@ operator fun <T> ComboBox<T>.minusAssign(item: T) {
 
 fun <T> ComboBox<T>.addAll(vararg items: T) = this.items.addAll(items)
 
+fun <T> ComboBox<T>.addAt(index: Int, item: T) = this.items.add(index, item)
+
+fun <T> ComboBox<T>.removeAt(index: Int) = this.items.removeAt(index)
+
+fun <T> ComboBox<T>.removeRange(from: Int, to: Int) = this.items.remove(from, to)
+
 fun <T> ComboBox<T>.removeAll(vararg items: T) = this.items.removeAll(items)
 
 var <T> ComboBox<T>.selectedIndex: Int
