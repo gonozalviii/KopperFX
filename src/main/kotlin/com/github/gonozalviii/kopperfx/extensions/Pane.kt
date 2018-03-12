@@ -36,3 +36,9 @@ fun Pane.clear() = this.children.clear()
 fun Pane.addAll(vararg nodes: Node) = this.children.addAll(nodes)
 
 fun Pane.removeAll(vararg nodes: Node) = this.children.removeAll(nodes)
+
+fun Pane.addAt(index: Int, node: Node) = this.children.add(index, node)
+
+fun Pane.removeAt(index: Int) = this.children.removeAt(index)
+
+fun Pane.removeRange(from: Int, to: Int) = this.children.remove(from, to)
