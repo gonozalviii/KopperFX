@@ -33,3 +33,9 @@ operator fun <T> TreeItem<T>.minusAssign(child: TreeItem<T>) {
 fun <T> TreeItem<T>.addAll(vararg children: TreeItem<T>) = this.children.addAll(children)
 
 fun <T> TreeItem<T>.removeAll(vararg children: TreeItem<T>) = this.children.removeAll(children)
+
+fun <T> TreeItem<T>.addAt(index: Int, child: TreeItem<T>) = this.children.add(index, child)
+
+fun <T> TreeItem<T>.removeAt(index: Int) = this.children.removeAt(index)
+
+fun <T> TreeItem<T>.removeRange(from: Int, to: Int) = this.children.remove(from, to)
