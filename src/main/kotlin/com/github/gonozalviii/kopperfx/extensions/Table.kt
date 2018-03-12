@@ -30,13 +30,9 @@ operator fun <T> TableView<T>.minusAssign(item: T) {
     this.items.remove(item)
 }
 
-fun <T> TableView<T>.addAll(vararg items: T) {
-    this.items.addAll(items)
-}
+fun <T> TableView<T>.addAll(vararg items: T) = this.items.addAll(items)
 
-fun <T> TableView<T>.removeAll(vararg items: T) {
-    this.items.removeAll(items)
-}
+fun <T> TableView<T>.removeAll(vararg items: T) = this.items.removeAll(items)
 
 fun <T> TableView<T>.getSelectedItems() = this.selectionModel.selectedItems
 

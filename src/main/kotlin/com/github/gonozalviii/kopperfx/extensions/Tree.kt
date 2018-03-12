@@ -30,10 +30,6 @@ operator fun <T> TreeItem<T>.minusAssign(child: TreeItem<T>) {
     this.children -= child
 }
 
-fun <T> TreeItem<T>.addAll(vararg children: TreeItem<T>) {
-    this.children.addAll(children)
-}
+fun <T> TreeItem<T>.addAll(vararg children: TreeItem<T>) = this.children.addAll(children)
 
-fun <T> TreeItem<T>.removeAll(vararg children: TreeItem<T>) {
-    this.children.removeAll(children)
-}
+fun <T> TreeItem<T>.removeAll(vararg children: TreeItem<T>) = this.children.removeAll(children)

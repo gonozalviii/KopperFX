@@ -31,10 +31,6 @@ operator fun MenuBar.minusAssign(menu: Menu) {
     this.menus -= menu
 }
 
-fun MenuBar.addAll(vararg menues: Menu) {
-    this.menus.addAll(menues)
-}
+fun MenuBar.addAll(vararg menues: Menu) = this.menus.addAll(menues)
 
-fun MenuBar.removeAll(vararg menues: Menu) {
-    this.menus.removeAll(menues)
-}
+fun MenuBar.removeAll(vararg menues: Menu) = this.menus.removeAll(menues)
