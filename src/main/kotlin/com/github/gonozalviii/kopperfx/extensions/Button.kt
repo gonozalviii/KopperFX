@@ -31,6 +31,18 @@ operator fun ButtonBar.minusAssign(button: Button) {
     this.buttons -= button
 }
 
+fun ButtonBar.addAt(index: Int, button: Button) {
+    this.buttons.add(index, button)
+}
+
+fun ButtonBar.removeAt(index: Int) {
+    this.buttons.removeAt(index)
+}
+
+fun ButtonBar.removeRange(from: Int, to: Int) {
+    this.buttons.remove(from, to)
+}
+
 fun ButtonBar.addAll(vararg buttons: Button) {
     this.buttons.addAll(buttons)
 }
