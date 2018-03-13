@@ -37,6 +37,8 @@ fun ToolBar.removeAll(vararg items: Node) = this.items.removeAll(items)
 
 fun ToolBar.addAt(index: Int, item: Node) = this.items.add(index, item)
 
-fun ToolBar.removeAt(index: Int) = this.items.removeAt(index)
+fun ToolBar.removeAt(index: Int): Node? {
+    return this.items.removeAt(index)
+}
 
 fun ToolBar.removeRange(from: Int, to: Int) = this.items.remove(from, to)

@@ -44,7 +44,9 @@ operator fun <T> ListView<T>.minusAssign(item: T) {
 
 fun <T> ListView<T>.addAt(index: Int, item: T) = this.items.add(index, item)
 
-fun <T> ListView<T>.removeAt(index: Int) = this.items.removeAt(index)
+fun <T> ListView<T>.removeAt(index: Int): T? {
+    return this.items.removeAt(index)
+}
 
 fun <T> ListView<T>.getItemFrom(index: Int) = this.items[index]
 

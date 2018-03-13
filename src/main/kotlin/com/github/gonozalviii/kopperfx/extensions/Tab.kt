@@ -37,7 +37,9 @@ fun TabPane.removeAll(vararg tabs: Tab) = this.tabs.removeAll(tabs)
 
 fun TabPane.addAt(index: Int, tab: Tab) = this.tabs.add(index, tab)
 
-fun TabPane.removeAt(index: Int) = this.tabs.removeAt(index)
+fun TabPane.removeAt(index: Int): Tab? {
+    return this.tabs.removeAt(index)
+}
 
 fun TabPane.removeRange(from: Int, to: Int) = this.tabs.remove(from, to)
 

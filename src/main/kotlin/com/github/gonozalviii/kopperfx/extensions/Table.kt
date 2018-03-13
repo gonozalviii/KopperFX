@@ -36,7 +36,9 @@ fun <T> TableView<T>.removeAll(vararg items: T) = this.items.removeAll(items)
 
 fun <T> TableView<T>.addAt(index: Int, item: T) = this.items.add(index, item)
 
-fun <T> TableView<T>.removeAt(index: Int) = this.items.removeAt(index)
+fun <T> TableView<T>.removeAt(index: Int): T? {
+    return this.items.removeAt(index)
+}
 
 fun <T> TableView<T>.removeRange(from: Int, to: Int) = this.items.remove(from, to)
 

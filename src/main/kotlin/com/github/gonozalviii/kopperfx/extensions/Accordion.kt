@@ -33,7 +33,9 @@ operator fun Accordion.minusAssign(pane: TitledPane) {
 
 fun Accordion.addAt(index: Int, pane: TitledPane) = this.panes.add(index, pane)
 
-fun Accordion.removeAt(index: Int) = this.panes.removeAt(index)
+fun Accordion.removeAt(index: Int): TitledPane? {
+    return this.panes.removeAt(index)
+}
 
 fun Accordion.removeRange(from: Int, to: Int) = this.panes.remove(from, to)
 

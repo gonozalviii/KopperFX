@@ -37,6 +37,8 @@ fun MenuBar.removeAll(vararg menues: Menu) = this.menus.removeAll(menues)
 
 fun MenuBar.addAt(index: Int, menu: Menu) = this.menus.add(index, menu)
 
-fun MenuBar.removeAt(index: Int) = this.menus.removeAt(index)
+fun MenuBar.removeAt(index: Int): Menu? {
+    return this.menus.removeAt(index)
+}
 
 fun MenuBar.removeRange(from: Int, to: Int) = this.menus.remove(from, to)

@@ -36,6 +36,8 @@ fun <T> TreeItem<T>.removeAll(vararg children: TreeItem<T>) = this.children.remo
 
 fun <T> TreeItem<T>.addAt(index: Int, child: TreeItem<T>) = this.children.add(index, child)
 
-fun <T> TreeItem<T>.removeAt(index: Int) = this.children.removeAt(index)
+fun <T> TreeItem<T>.removeAt(index: Int): TreeItem<T>? {
+    return this.children.removeAt(index)
+}
 
 fun <T> TreeItem<T>.removeRange(from: Int, to: Int) = this.children.remove(from, to)
