@@ -16,15 +16,11 @@
 
 package extensions
 
-import com.github.gonozalviii.kopperfx.extensions.addAll
-import com.github.gonozalviii.kopperfx.extensions.minusAssign
-import com.github.gonozalviii.kopperfx.extensions.plusAssign
-import com.github.gonozalviii.kopperfx.extensions.removeAll
+import com.github.gonozalviii.kopperfx.extensions.*
 import javafx.embed.swing.JFXPanel
 import javafx.scene.control.Button
 import javafx.scene.control.ChoiceBox
-import org.junit.jupiter.api.Assertions.assertFalse
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
@@ -91,5 +87,49 @@ class ChoiceBoxTest {
         assertFalse(choiceBox.items.contains(button2), "choicebox should not contain button2")
         assertFalse(choiceBox.items.contains(button3), "choicebox should not contain button3")
     }
+
+
+    @Test
+    @DisplayName("addAt on choiceBox adds button at index")
+    fun addAtAddsButtonAtIndex() {
+        val choiceBox = ChoiceBox<Button>()
+        val button = Button()
+        val button1 = Button()
+        val button2 = Button()
+        val button3 = Button()
+        choiceBox.items.addAll(button1, button2, button3)
+
+        choiceBox.addAt(2, button)
+
+        assertEquals(button, choiceBox.items[2], "choiceBox should contain button at index")
+    }
+
+    @Test
+    @DisplayName("removeAt on choiceBox removes button at index")
+    fun removeAtRemovesButtonAtIndex() {
+        val choiceBox = ChoiceBox<Button>()
+        val button1 = Button()
+        val button2 = Button()
+        val button3 = Button()
+        choiceBox.items.addAll(button1, button2, button3)
+
+        assertEquals(button2, choiceBox.removeAt(1), "choiceBox should not contain button at index")
+    }
+
+    @Test
+    @DisplayName("removeRange on choiceBox removes buttons in range")
+    fun removeRangeRemovesButtonsInRange() {
+        val choiceBox = ChoiceBox<Button>()
+        val button1 = Button()
+        val button2 = Button()
+        val button3 = Button()
+        choiceBox.items.addAll(button1, button2, button3)
+
+        choiceBox.removeRange(0, 2)
+
+        assertTrue(choiceBox.items.size == 1, "choiceBox should only contain one button")
+        assertEquals(button3, choiceBox.items[0], "choiceBox should only contain specific button")
+    }
+
 
 }
