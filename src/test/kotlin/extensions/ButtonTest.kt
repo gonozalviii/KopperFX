@@ -16,15 +16,11 @@
 
 package extensions
 
-import com.github.gonozalviii.kopperfx.extensions.addAll
-import com.github.gonozalviii.kopperfx.extensions.minusAssign
-import com.github.gonozalviii.kopperfx.extensions.plusAssign
-import com.github.gonozalviii.kopperfx.extensions.removeAll
+import com.github.gonozalviii.kopperfx.extensions.*
 import javafx.embed.swing.JFXPanel
 import javafx.scene.control.Button
 import javafx.scene.control.ButtonBar
-import org.junit.jupiter.api.Assertions.assertFalse
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
@@ -91,6 +87,49 @@ class ButtonTest {
         assertFalse(buttonBar.buttons.contains(button1), "buttonbar should not contain button1")
         assertFalse(buttonBar.buttons.contains(button2), "buttonbar should not contain button2")
         assertFalse(buttonBar.buttons.contains(button3), "buttonbar should not contain button3")
+    }
+
+
+    @Test
+    @DisplayName("addAt on buttonbar adds button at index")
+    fun addAtAddsButtonAtIndex() {
+        val buttonBar = ButtonBar()
+        val button = Button()
+        val button1 = Button()
+        val button2 = Button()
+        val button3 = Button()
+        buttonBar.buttons.addAll(button1, button2, button3)
+
+        buttonBar.addAt(2, button)
+
+        assertEquals(button, buttonBar.buttons[2], "buttonbar should contain button at index")
+    }
+
+    @Test
+    @DisplayName("removeAt on buttonbar removes button at index")
+    fun removeAtRemovesButtonAtIndex() {
+        val buttonBar = ButtonBar()
+        val button1 = Button()
+        val button2 = Button()
+        val button3 = Button()
+        buttonBar.buttons.addAll(button1, button2, button3)
+
+        assertEquals(button2, buttonBar.removeAt(1), "buttonbar should not contain button at index")
+    }
+
+    @Test
+    @DisplayName("removeRange on buttonbar removes buttons in range")
+    fun removeRangeRemovesButtonsInRange() {
+        val buttonBar = ButtonBar()
+        val button1 = Button()
+        val button2 = Button()
+        val button3 = Button()
+        buttonBar.buttons.addAll(button1, button2, button3)
+
+        buttonBar.removeRange(0, 2)
+
+        assertTrue(buttonBar.buttons.size == 1, "buttonbar should only contain one button")
+        assertEquals(button3, buttonBar.buttons[0], "buttonbar should only contain specific button")
     }
 
 }
