@@ -16,15 +16,11 @@
 
 package extensions
 
-import com.github.gonozalviii.kopperfx.extensions.addAll
-import com.github.gonozalviii.kopperfx.extensions.minusAssign
-import com.github.gonozalviii.kopperfx.extensions.plusAssign
-import com.github.gonozalviii.kopperfx.extensions.removeAll
+import com.github.gonozalviii.kopperfx.extensions.*
 import javafx.embed.swing.JFXPanel
 import javafx.scene.control.Accordion
 import javafx.scene.control.TitledPane
-import org.junit.jupiter.api.Assertions.assertFalse
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
@@ -91,6 +87,48 @@ class AccordionTest {
         assertFalse(accordion.panes.contains(titledPane1), "accordion should not contain titledpane1")
         assertFalse(accordion.panes.contains(titledPane2), "accordion should not contain titledpane2")
         assertFalse(accordion.panes.contains(titledPane3), "accordion should not contain titledpane3")
+    }
+
+    @Test
+    @DisplayName("addAt on accordion adds titledpane at index")
+    fun addAtAddsTitledPaneAtIndex() {
+        val accordion = Accordion()
+        val titledPane = TitledPane()
+        val titledPane1 = TitledPane()
+        val titledPane2 = TitledPane()
+        val titledPane3 = TitledPane()
+        accordion.panes.addAll(titledPane1, titledPane2, titledPane3)
+
+        accordion.addAt(2, titledPane)
+
+        assertEquals(titledPane, accordion.panes[2], "accordion should contain titledpane at index")
+    }
+
+    @Test
+    @DisplayName("removeAt on accordion removes titledpane at index")
+    fun removeAtRemovesTitledPaneAtIndex() {
+        val accordion = Accordion()
+        val titledPane1 = TitledPane()
+        val titledPane2 = TitledPane()
+        val titledPane3 = TitledPane()
+        accordion.panes.addAll(titledPane1, titledPane2, titledPane3)
+
+        assertEquals(titledPane2, accordion.removeAt(1), "accordion should not contain titledpane at index")
+    }
+
+    @Test
+    @DisplayName("removeRange on accordion removes titledpanes in range")
+    fun removeRangeRemovesTitledPanesInRange() {
+        val accordion = Accordion()
+        val titledPane1 = TitledPane()
+        val titledPane2 = TitledPane()
+        val titledPane3 = TitledPane()
+        accordion.panes.addAll(titledPane1, titledPane2, titledPane3)
+
+        accordion.removeRange(0, 2)
+
+        assertTrue(accordion.panes.size == 1, "accordion should only contain one titledpane")
+        assertEquals(titledPane3, accordion.panes[0], "accordion should only contain specific titledpane")
     }
 
 }
