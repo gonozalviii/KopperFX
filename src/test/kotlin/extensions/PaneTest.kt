@@ -20,8 +20,7 @@ import com.github.gonozalviii.kopperfx.extensions.*
 import javafx.embed.swing.JFXPanel
 import javafx.scene.control.Button
 import javafx.scene.layout.Pane
-import org.junit.jupiter.api.Assertions.assertFalse
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
@@ -102,6 +101,48 @@ class PaneTest {
         assertFalse(pane.children.contains(button1), "pane should not contain button1")
         assertFalse(pane.children.contains(button2), "pane should not contain button2")
         assertFalse(pane.children.contains(button3), "pane should not contain button3")
+    }
+
+    @Test
+    @DisplayName("addAt on pane adds button at index")
+    fun addAtAddsButtonAtIndex() {
+        val pane = Pane()
+        val button = Button()
+        val button1 = Button()
+        val button2 = Button()
+        val button3 = Button()
+        pane.children.addAll(button1, button2, button3)
+
+        pane.addAt(2, button)
+
+        assertEquals(button, pane.children[2], "pane should contain button at index")
+    }
+
+    @Test
+    @DisplayName("removeAt on pane removes button at index")
+    fun removeAtRemovesButtonAtIndex() {
+        val pane = Pane()
+        val button1 = Button()
+        val button2 = Button()
+        val button3 = Button()
+        pane.children.addAll(button1, button2, button3)
+
+        assertEquals(button2, pane.removeAt(1), "pane should not contain button at index")
+    }
+
+    @Test
+    @DisplayName("removeRange on pane removes buttons in range")
+    fun removeRangeRemovesButtonsInRange() {
+        val pane = Pane()
+        val button1 = Button()
+        val button2 = Button()
+        val button3 = Button()
+        pane.children.addAll(button1, button2, button3)
+
+        pane.removeRange(0, 2)
+
+        assertTrue(pane.children.size == 1, "pane should only contain one button")
+        assertEquals(button3, pane.children[0], "pane should only contain specific button")
     }
 
 }
