@@ -16,15 +16,11 @@
 
 package extensions
 
-import com.github.gonozalviii.kopperfx.extensions.addAll
-import com.github.gonozalviii.kopperfx.extensions.minusAssign
-import com.github.gonozalviii.kopperfx.extensions.plusAssign
-import com.github.gonozalviii.kopperfx.extensions.removeAll
+import com.github.gonozalviii.kopperfx.extensions.*
 import javafx.embed.swing.JFXPanel
 import javafx.scene.control.Menu
 import javafx.scene.control.MenuBar
-import org.junit.jupiter.api.Assertions.assertFalse
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
@@ -91,6 +87,49 @@ class MenuTest {
         assertFalse(menuBar.menus.contains(menu1), "menubar should not contain menu1")
         assertFalse(menuBar.menus.contains(menu2), "menubar should not contain menu2")
         assertFalse(menuBar.menus.contains(menu3), "menubar should not contain menu3")
+    }
+
+
+    @Test
+    @DisplayName("addAt on menubar adds menu at index")
+    fun addAtAddsMenuAtIndex() {
+        val menuBar = MenuBar()
+        val menu = Menu()
+        val menu1 = Menu()
+        val menu2 = Menu()
+        val menu3 = Menu()
+        menuBar.menus.addAll(menu1, menu2, menu3)
+
+        menuBar.addAt(2, menu)
+
+        assertEquals(menu, menuBar.menus[2], "menubar should contain menu at index")
+    }
+
+    @Test
+    @DisplayName("removeAt on menubar removes menu at index")
+    fun removeAtRemovesMenuAtIndex() {
+        val menuBar = MenuBar()
+        val menu1 = Menu()
+        val menu2 = Menu()
+        val menu3 = Menu()
+        menuBar.menus.addAll(menu1, menu2, menu3)
+
+        assertEquals(menu2, menuBar.removeAt(1), "menubar should not contain menu at index")
+    }
+
+    @Test
+    @DisplayName("removeRange on menubar removes menus in range")
+    fun removeRangeRemovesMenusInRange() {
+        val menuBar = MenuBar()
+        val menu1 = Menu()
+        val menu2 = Menu()
+        val menu3 = Menu()
+        menuBar.menus.addAll(menu1, menu2, menu3)
+
+        menuBar.removeRange(0, 2)
+
+        assertTrue(menuBar.menus.size == 1, "menubar should only contain one menu")
+        assertEquals(menu3, menuBar.menus[0], "menubar should only contain specific menu")
     }
 
 }

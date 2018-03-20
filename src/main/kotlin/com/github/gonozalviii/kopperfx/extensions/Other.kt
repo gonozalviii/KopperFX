@@ -25,9 +25,8 @@ import javafx.stage.Stage
 /**
  * Other
  */
-fun FileChooser.addExtensionFilter(description: String, vararg extensions: String) {
+fun FileChooser.addExtensionFilter(description: String, vararg extensions: String) =
     this.extensionFilters.add(FileChooser.ExtensionFilter(description, *extensions))
-}
 
 fun Stage.addIcons(vararg icons: String) = icons.forEach { this.icons += Image(it) }
 

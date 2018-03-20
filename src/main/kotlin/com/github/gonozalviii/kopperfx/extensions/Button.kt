@@ -16,6 +16,7 @@
 
 package com.github.gonozalviii.kopperfx.extensions
 
+import javafx.scene.Node
 import javafx.scene.control.Button
 import javafx.scene.control.ButtonBar
 
@@ -31,10 +32,14 @@ operator fun ButtonBar.minusAssign(button: Button) {
     this.buttons -= button
 }
 
-fun ButtonBar.addAll(vararg buttons: Button) {
-    this.buttons.addAll(buttons)
+fun ButtonBar.addAt(index: Int, button: Button) = this.buttons.add(index, button)
+
+fun ButtonBar.removeAt(index: Int): Node? {
+    return this.buttons.removeAt(index)
 }
 
-fun ButtonBar.removeAll(vararg buttons: Button) {
-    this.buttons.removeAll(buttons)
-}
+fun ButtonBar.removeRange(from: Int, to: Int) = this.buttons.remove(from, to)
+
+fun ButtonBar.addAll(vararg buttons: Button) = this.buttons.addAll(buttons)
+
+fun ButtonBar.removeAll(vararg buttons: Button) = this.buttons.removeAll(buttons)

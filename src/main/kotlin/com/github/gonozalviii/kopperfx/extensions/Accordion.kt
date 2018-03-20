@@ -31,10 +31,14 @@ operator fun Accordion.minusAssign(pane: TitledPane) {
     this.panes -= pane
 }
 
-fun Accordion.addAll(vararg panes: TitledPane) {
-    this.panes.addAll(panes)
+fun Accordion.addAt(index: Int, pane: TitledPane) = this.panes.add(index, pane)
+
+fun Accordion.removeAt(index: Int): TitledPane? {
+    return this.panes.removeAt(index)
 }
 
-fun Accordion.removeAll(vararg panes: TitledPane) {
-    this.panes.removeAll(panes)
-}
+fun Accordion.removeRange(from: Int, to: Int) = this.panes.remove(from, to)
+
+fun Accordion.addAll(vararg panes: TitledPane) = this.panes.addAll(panes)
+
+fun Accordion.removeAll(vararg panes: TitledPane) = this.panes.removeAll(panes)
