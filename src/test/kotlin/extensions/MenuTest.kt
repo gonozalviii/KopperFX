@@ -132,4 +132,19 @@ class MenuTest {
         assertEquals(menu3, menuBar.menus[0], "menubar should only contain specific menu")
     }
 
+    @Test
+    @DisplayName("removeRange with range on menubar removes menus in range")
+    fun removeRangeWithRangeRemovesMenusInRange() {
+        val menuBar = MenuBar()
+        val menu1 = Menu()
+        val menu2 = Menu()
+        val menu3 = Menu()
+        menuBar.menus.addAll(menu1, menu2, menu3)
+
+        menuBar.removeRange(0..2)
+
+        assertTrue(menuBar.menus.size == 1, "menubar should only contain one menu")
+        assertEquals(menu3, menuBar.menus[0], "menubar should only contain specific menu")
+    }
+
 }

@@ -131,5 +131,20 @@ class ChoiceBoxTest {
         assertEquals(button3, choiceBox.items[0], "choiceBox should only contain specific button")
     }
 
+    @Test
+    @DisplayName("removeRange with range on choiceBox removes buttons in range")
+    fun removeRangeWithRangeRemovesButtonsInRange() {
+        val choiceBox = ChoiceBox<Button>()
+        val button1 = Button()
+        val button2 = Button()
+        val button3 = Button()
+        choiceBox.items.addAll(button1, button2, button3)
+
+        choiceBox.removeRange(0..2)
+
+        assertTrue(choiceBox.items.size == 1, "choiceBox should only contain one button")
+        assertEquals(button3, choiceBox.items[0], "choiceBox should only contain specific button")
+    }
+
 
 }

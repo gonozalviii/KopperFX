@@ -131,4 +131,19 @@ class ComboBoxTest {
         assertEquals(button3, comboBox.items[0], "comboBox should only contain specific button")
     }
 
+    @Test
+    @DisplayName("removeRange with range on comboBox removes buttons in range")
+    fun removeRangeWithRangeRemovesButtonsInRange() {
+        val comboBox = ComboBox<Button>()
+        val button1 = Button()
+        val button2 = Button()
+        val button3 = Button()
+        comboBox.items.addAll(button1, button2, button3)
+
+        comboBox.removeRange(0..2)
+
+        assertTrue(comboBox.items.size == 1, "comboBox should only contain one button")
+        assertEquals(button3, comboBox.items[0], "comboBox should only contain specific button")
+    }
+
 }

@@ -44,3 +44,5 @@ fun Pane.removeAt(index: Int): Node? {
 }
 
 fun Pane.removeRange(from: Int, to: Int) = this.children.remove(from, to)
+
+fun Pane.removeRange(range: IntRange) = this.children.remove(range.first, range.last)

@@ -16,13 +16,11 @@
 
 package extensions
 
-import com.github.gonozalviii.kopperfx.extensions.addAll
-import com.github.gonozalviii.kopperfx.extensions.minusAssign
-import com.github.gonozalviii.kopperfx.extensions.plusAssign
-import com.github.gonozalviii.kopperfx.extensions.removeAll
+import com.github.gonozalviii.kopperfx.extensions.*
 import javafx.embed.swing.JFXPanel
 import javafx.scene.control.Button
 import javafx.scene.control.ToolBar
+import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeAll
@@ -93,4 +91,33 @@ class ToolbarTest {
         assertFalse(toolBar.items.contains(button3), "toolbar should not contain button3")
     }
 
+    @Test
+    @DisplayName("removeRange on toolbar removes buttons in range")
+    fun removeRangeRemovesButtonsInRange() {
+        val toolBar = ToolBar()
+        val button1 = Button()
+        val button2 = Button()
+        val button3 = Button()
+        toolBar.items.addAll(button1, button2, button3)
+
+        toolBar.removeRange(0, 2)
+
+        assertTrue(toolBar.items.size == 1, "toolbar should only contain one button")
+        Assertions.assertEquals(button3, toolBar.items[0], "toolbar should only contain specific button")
+    }
+
+    @Test
+    @DisplayName("removeRange with range on toolbar removes buttons in range")
+    fun removeRangeWithRangeRemovesButtonsInRange() {
+        val toolBar = ToolBar()
+        val button1 = Button()
+        val button2 = Button()
+        val button3 = Button()
+        toolBar.items.addAll(button1, button2, button3)
+
+        toolBar.removeRange(0..2)
+
+        assertTrue(toolBar.items.size == 1, "toolbar should only contain one button")
+        Assertions.assertEquals(button3, toolBar.items[0], "toolbar should only contain specific button")
+    }
 }

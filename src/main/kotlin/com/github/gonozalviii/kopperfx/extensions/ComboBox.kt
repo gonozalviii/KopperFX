@@ -40,6 +40,8 @@ fun <T> ComboBox<T>.removeAt(index: Int): T? {
 
 fun <T> ComboBox<T>.removeRange(from: Int, to: Int) = this.items.remove(from, to)
 
+fun <T> ComboBox<T>.removeRange(range: IntRange) = this.items.remove(range.first, range.last)
+
 fun <T> ComboBox<T>.removeAll(vararg items: T) = this.items.removeAll(items)
 
 var <T> ComboBox<T>.selectedIndex: Int

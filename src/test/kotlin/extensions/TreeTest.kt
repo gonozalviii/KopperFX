@@ -131,5 +131,19 @@ class TreeTest {
         assertEquals(subTreeItem3, treeItem.children[0], "treeitem should only contain specific subTreeItem")
     }
 
+    @Test
+    @DisplayName("removeRange with range on treeitem removes subTreeItems in range")
+    fun removeRangeWithRangeRemovesTreeItemsInRange() {
+        val treeItem = TreeItem<Button>()
+        val subTreeItem1 = TreeItem<Button>()
+        val subTreeItem2 = TreeItem<Button>()
+        val subTreeItem3 = TreeItem<Button>()
+        treeItem.children.addAll(subTreeItem1, subTreeItem2, subTreeItem3)
+
+        treeItem.removeRange(0..2)
+
+        assertTrue(treeItem.children.size == 1, "treeitem should only contain one subTreeItem")
+        assertEquals(subTreeItem3, treeItem.children[0], "treeitem should only contain specific subTreeItem")
+    }
 
 }

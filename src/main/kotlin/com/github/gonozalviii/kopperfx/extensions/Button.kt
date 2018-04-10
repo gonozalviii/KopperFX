@@ -40,6 +40,8 @@ fun ButtonBar.removeAt(index: Int): Node? {
 
 fun ButtonBar.removeRange(from: Int, to: Int) = this.buttons.remove(from, to)
 
+fun ButtonBar.removeRange(range: IntRange) = this.buttons.remove(range.first, range.last)
+
 fun ButtonBar.addAll(vararg buttons: Button) = this.buttons.addAll(buttons)
 
 fun ButtonBar.removeAll(vararg buttons: Button) = this.buttons.removeAll(buttons)

@@ -145,4 +145,19 @@ class PaneTest {
         assertEquals(button3, pane.children[0], "pane should only contain specific button")
     }
 
+    @Test
+    @DisplayName("removeRange with range on pane removes buttons in range")
+    fun removeRangeWithRangeRemovesButtonsInRange() {
+        val pane = Pane()
+        val button1 = Button()
+        val button2 = Button()
+        val button3 = Button()
+        pane.children.addAll(button1, button2, button3)
+
+        pane.removeRange(0..2)
+
+        assertTrue(pane.children.size == 1, "pane should only contain one button")
+        assertEquals(button3, pane.children[0], "pane should only contain specific button")
+    }
+
 }

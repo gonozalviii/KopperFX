@@ -132,4 +132,19 @@ class ButtonTest {
         assertEquals(button3, buttonBar.buttons[0], "buttonbar should only contain specific button")
     }
 
+    @Test
+    @DisplayName("removeRange with range on buttonbar removes buttons in range")
+    fun removeRangeWithRangeRemovesButtonsInRange() {
+        val buttonBar = ButtonBar()
+        val button1 = Button()
+        val button2 = Button()
+        val button3 = Button()
+        buttonBar.buttons.addAll(button1, button2, button3)
+
+        buttonBar.removeRange(0..2)
+
+        assertTrue(buttonBar.buttons.size == 1, "buttonbar should only contain one button")
+        assertEquals(button3, buttonBar.buttons[0], "buttonbar should only contain specific button")
+    }
+
 }

@@ -131,4 +131,19 @@ class AccordionTest {
         assertEquals(titledPane3, accordion.panes[0], "accordion should only contain specific titledpane")
     }
 
+    @Test
+    @DisplayName("removeRange with range on accordion removes titledpanes in range")
+    fun removeRangeWithRangeRemovesTitledPanesInRange() {
+        val accordion = Accordion()
+        val titledPane1 = TitledPane()
+        val titledPane2 = TitledPane()
+        val titledPane3 = TitledPane()
+        accordion.panes.addAll(titledPane1, titledPane2, titledPane3)
+
+        accordion.removeRange(0..2)
+
+        assertTrue(accordion.panes.size == 1, "accordion should only contain one titledpane")
+        assertEquals(titledPane3, accordion.panes[0], "accordion should only contain specific titledpane")
+    }
+
 }

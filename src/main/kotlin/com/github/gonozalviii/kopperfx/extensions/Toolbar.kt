@@ -42,3 +42,5 @@ fun ToolBar.removeAt(index: Int): Node? {
 }
 
 fun ToolBar.removeRange(from: Int, to: Int) = this.items.remove(from, to)
+
+fun ToolBar.removeRange(range: IntRange) = this.items.remove(range.first, range.last)
