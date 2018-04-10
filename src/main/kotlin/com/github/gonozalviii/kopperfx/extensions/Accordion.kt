@@ -39,7 +39,7 @@ fun Accordion.removeAt(index: Int): TitledPane? {
 
 fun Accordion.removeRange(from: Int, to: Int) = this.panes.remove(from, to)
 
-fun Accordion.removeRange(range: IntRange) = this.panes.remove(range.first, range.last)
+fun Accordion.removeRange(range: ClosedRange<Int>) = this.panes.remove(range.start, range.endInclusive)
 
 fun Accordion.addAll(vararg panes: TitledPane) = this.panes.addAll(panes)
 

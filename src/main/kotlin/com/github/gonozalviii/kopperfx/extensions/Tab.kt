@@ -43,7 +43,7 @@ fun TabPane.removeAt(index: Int): Tab? {
 
 fun TabPane.removeRange(from: Int, to: Int) = this.tabs.remove(from, to)
 
-fun TabPane.removeRange(range: IntRange) = this.tabs.remove(range.first, range.last)
+fun TabPane.removeRange(range: ClosedRange<Int>) = this.tabs.remove(range.start, range.endInclusive)
 
 fun TabPane.selectFirst() = this.selectionModel.selectFirst()
 

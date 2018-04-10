@@ -43,4 +43,4 @@ fun MenuBar.removeAt(index: Int): Menu? {
 
 fun MenuBar.removeRange(from: Int, to: Int) = this.menus.remove(from, to)
 
-fun MenuBar.removeRange(range: IntRange) = this.menus.remove(range.first, range.last)
+fun MenuBar.removeRange(range: ClosedRange<Int>) = this.menus.remove(range.start, range.endInclusive)

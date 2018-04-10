@@ -56,7 +56,7 @@ fun <T> ListView<T>.removeAll(vararg items: T) = this.items.removeAll(items)
 
 fun <T> ListView<T>.removeRange(from: Int, to: Int) = this.items.remove(from, to)
 
-fun <T> ListView<T>.removeRange(range: IntRange) = this.items.remove(range.first, range.last)
+fun <T> ListView<T>.removeRange(range: ClosedRange<Int>) = this.items.remove(range.start, range.endInclusive)
 
 var <T> ListView<T>.focusedIndex
     get() = this.focusModel.focusedIndex

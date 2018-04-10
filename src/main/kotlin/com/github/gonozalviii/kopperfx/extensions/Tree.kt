@@ -42,4 +42,4 @@ fun <T> TreeItem<T>.removeAt(index: Int): TreeItem<T>? {
 
 fun <T> TreeItem<T>.removeRange(from: Int, to: Int) = this.children.remove(from, to)
 
-fun <T> TreeItem<T>.removeRange(range: IntRange) = this.children.remove(range.first, range.last)
+fun <T> TreeItem<T>.removeRange(range: ClosedRange<Int>) = this.children.remove(range.start, range.endInclusive)

@@ -40,7 +40,7 @@ fun <T> ChoiceBox<T>.removeAt(index: Int): T? {
 
 fun <T> ChoiceBox<T>.removeRange(from: Int, to: Int) = this.items.remove(from, to)
 
-fun <T> ChoiceBox<T>.removeRange(range: IntRange) = this.items.remove(range.first, range.last)
+fun <T> ChoiceBox<T>.removeRange(range: ClosedRange<Int>) = this.items.remove(range.start, range.endInclusive)
 
 fun <T> ChoiceBox<T>.removeAll(vararg items: T) = this.items.removeAll(items)
 
