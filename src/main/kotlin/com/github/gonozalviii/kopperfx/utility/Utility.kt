@@ -46,8 +46,8 @@ fun animationTimer(start: Boolean = true, block: () -> Unit): AnimationTimer {
 
 inline fun <reified T: Application> launch(args: Array<String>) = LauncherImpl.launchApplication(T::class.java, args)
 
-inline fun <reified T: Application> launch(args: Array<String>, preloader: Class<out Preloader>) {
-    LauncherImpl.launchApplication(T::class.java, preloader, args)
+inline fun <reified T: Application> launch(args: Array<String>, preloader: KClass<out Preloader>) {
+    LauncherImpl.launchApplication(T::class.java, preloader.java, args)
 }
 
 inline fun <reified T> loadFXML(url: String, noinline controllerFactory: ((Class<*>) -> Any)? = null): T {
