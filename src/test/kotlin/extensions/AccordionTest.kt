@@ -16,24 +16,15 @@
 
 package extensions
 
+import base.AbstractJavaFxTestBase
 import com.github.gonozalviii.kopperfx.extensions.*
-import javafx.embed.swing.JFXPanel
 import javafx.scene.control.Accordion
 import javafx.scene.control.TitledPane
 import org.junit.jupiter.api.Assertions.*
-import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 
-class AccordionTest {
-
-    companion object {
-        @BeforeAll
-        @JvmStatic
-        fun classSetup() {
-            JFXPanel() // init JavaFX
-        }
-    }
+class AccordionTest : AbstractJavaFxTestBase() {
 
     @Test
     @DisplayName("plus assign on accordion adds titledpane")

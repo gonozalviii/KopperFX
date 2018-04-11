@@ -16,24 +16,15 @@
 
 package extensions
 
+import base.AbstractJavaFxTestBase
 import com.github.gonozalviii.kopperfx.extensions.*
-import javafx.embed.swing.JFXPanel
 import javafx.scene.control.Button
 import javafx.scene.layout.Pane
 import org.junit.jupiter.api.Assertions.*
-import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 
-class PaneTest {
-
-    companion object {
-        @BeforeAll
-        @JvmStatic
-        fun classSetup() {
-            JFXPanel() // init JavaFX
-        }
-    }
+class PaneTest : AbstractJavaFxTestBase() {
 
     @Test
     @DisplayName("plus assign on pane adds button")

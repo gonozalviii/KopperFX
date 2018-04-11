@@ -16,24 +16,15 @@
 
 package extensions
 
+import base.AbstractJavaFxTestBase
 import com.github.gonozalviii.kopperfx.extensions.*
-import javafx.embed.swing.JFXPanel
 import javafx.scene.control.Button
 import javafx.scene.control.ChoiceBox
 import org.junit.jupiter.api.Assertions.*
-import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 
-class ChoiceBoxTest {
-
-    companion object {
-        @BeforeAll
-        @JvmStatic
-        fun classSetup() {
-            JFXPanel() // init JavaFX
-        }
-    }
+class ChoiceBoxTest : AbstractJavaFxTestBase() {
 
     @Test
     @DisplayName("plus assign on choiceBox adds button")

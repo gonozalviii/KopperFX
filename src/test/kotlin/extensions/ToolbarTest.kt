@@ -16,26 +16,17 @@
 
 package extensions
 
+import base.AbstractJavaFxTestBase
 import com.github.gonozalviii.kopperfx.extensions.*
-import javafx.embed.swing.JFXPanel
 import javafx.scene.control.Button
 import javafx.scene.control.ToolBar
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
-import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 
-class ToolbarTest {
-
-    companion object {
-        @BeforeAll
-        @JvmStatic
-        fun classSetup() {
-            JFXPanel() // init JavaFX
-        }
-    }
+class ToolbarTest : AbstractJavaFxTestBase() {
 
     @Test
     @DisplayName("plus assign on toolbar adds menu")
