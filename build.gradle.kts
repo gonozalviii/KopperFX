@@ -4,7 +4,7 @@ group = "com.github.gonozalviii"
 version = "0.5"
 
 plugins {
-    kotlin("jvm") version "1.2.30"
+    kotlin("jvm") version "1.2.31"
     `maven-publish`
 }
 
@@ -15,15 +15,12 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
     testImplementation("org.junit.jupiter", "junit-jupiter-engine", "5.1.0")
+    testImplementation("org.mockito", "mockito-core", "2.18.0")
 }
 
 tasks {
     withType<KotlinCompile> {
         targetCompatibility = "1.8"
-    }
-
-    withType<Wrapper> {
-        gradleVersion = "4.6"
     }
 
     "sourcesJar"(Jar::class) {
@@ -33,7 +30,9 @@ tasks {
     }
 
     withType<Test>{
-        useJUnitPlatform()
+        useJUnitPlatform() {
+
+        }
     }
 
 }
