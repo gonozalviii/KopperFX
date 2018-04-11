@@ -1,4 +1,4 @@
-/*
+package utility/*
  * Copyright 2018 Peer Schoenhusen & Ramon Victor
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
+import base.AbstractJavaFxTestBase
 import com.github.gonozalviii.kopperfx.utility.fxThread
 import com.github.gonozalviii.kopperfx.utility.service
 import com.github.gonozalviii.kopperfx.utility.task
-import javafx.embed.swing.JFXPanel
 import org.junit.jupiter.api.AfterAll
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertTimeout
-import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import java.time.Duration
@@ -29,16 +28,10 @@ import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 import java.util.concurrent.atomic.AtomicInteger
 
-class ConcurrencyTest {
+class ConcurrencyTest : AbstractJavaFxTestBase() {
 
     companion object {
         private val executor = Executors.newSingleThreadExecutor()
-
-        @BeforeAll
-        @JvmStatic
-        fun classSetup() {
-            JFXPanel() // init JavaFX
-        }
 
         @AfterAll
         @JvmStatic
