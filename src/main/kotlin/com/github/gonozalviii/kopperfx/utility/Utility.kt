@@ -44,7 +44,13 @@ fun animationTimer(start: Boolean = true, block: () -> Unit): AnimationTimer {
     }
 }
 
-fun loadFXML(url: String, controllerFactory: ((Class<*>) -> Any)? = null): Node {
+inline fun <reified T: Application> launch(args: Array<String>) = LauncherImpl.launchApplication(T::class.java, args)
+
+inline fun <reified T: Application> launch(args: Array<String>, preloader: Class<out Preloader>) {
+    LauncherImpl.launchApplication(T::class.java, preloader, args)
+}
+
+inline fun <reified T> loadFXML(url: String, noinline controllerFactory: ((Class<*>) -> Any)? = null): T {
     val resource = KClass::class.java.getResource(url) ?: throw RuntimeException("FXML file not found: <$url>")
     val loader = FXMLLoader(resource)
     if (controllerFactory != null) {
