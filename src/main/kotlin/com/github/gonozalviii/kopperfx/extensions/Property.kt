@@ -16,15 +16,29 @@
 
 package com.github.gonozalviii.kopperfx.extensions
 
-import javafx.beans.value.ObservableValue
-import javafx.beans.value.WritableValue
+import javafx.beans.value.*
 import kotlin.reflect.KProperty
 
 /**
  * Property delegates
  */
-operator fun <T> ObservableValue<T>.getValue(thisRef: Any?, property: KProperty<*>): T = this.value
+operator fun <T> WritableValue<T>.getValue(thisRef: Any?, property: KProperty<*>): T = this.value
 
-operator fun <T> WritableValue<T>.setValue(thisRef: Any?, property: KProperty<*>, value: T) {
-    this.value = value
-}
+operator fun <T> WritableValue<T>.setValue(thisRef: Any?, property: KProperty<*>, value: T) = setValue(value)
+
+operator fun WritableIntegerValue.getValue(thisRef: Any?, property: KProperty<*>): Int = get()
+
+operator fun WritableIntegerValue.setValue(thisRef: Any?, property: KProperty<*>, value: Int) = set(value)
+
+operator fun WritableLongValue.getValue(thisRef: Any?, property: KProperty<*>): Long = get()
+
+operator fun WritableLongValue.setValue(thisRef: Any?, property: KProperty<*>, value: Long) = set(value)
+
+operator fun WritableFloatValue.getValue(thisRef: Any?, property: KProperty<*>): Float = get()
+
+operator fun WritableFloatValue.setValue(thisRef: Any?, property: KProperty<*>, value: Float) = set(value)
+
+operator fun WritableDoubleValue.getValue(thisRef: Any?, property: KProperty<*>): Double = get()
+
+operator fun WritableDoubleValue.setValue(thisRef: Any?, property: KProperty<*>, value: Double) = set(value)
+
