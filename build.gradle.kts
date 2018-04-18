@@ -14,8 +14,12 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    testImplementation("org.junit.jupiter", "junit-jupiter-engine", "5.1.0")
-    testImplementation("org.mockito", "mockito-core", "2.18.0")
+    testImplementation("org.junit", "junit-bom", "5.2.0-M1")
+    testImplementation("org.junit.jupiter", "junit-jupiter-engine")
+    val mockitoVersion = "2.18.0"
+    testImplementation("org.mockito", "mockito-core", mockitoVersion)
+    testImplementation("org.mockito", "mockito-inline", mockitoVersion)
+    testImplementation("org.mockito", "mockito-junit-jupiter", mockitoVersion)
 }
 
 tasks {
@@ -29,10 +33,12 @@ tasks {
         dependsOn("classes")
     }
 
-    withType<Test>{
-        useJUnitPlatform() {
+    withType<Test> {
+        useJUnitPlatform()
+    }
 
-        }
+    withType<Wrapper> {
+        gradleVersion = "4.6"
     }
 
 }
