@@ -12,6 +12,22 @@ KopperFX was born in production use and extracted into a separate library as the
 were used over and over in different projects. Since then a lot of additional functions and functionality has been
 added. 
 
+#### Why not use TornadoFX?
+
+When we started using Kotlin with JavaFX we of course took a look at the "lightweight" framework TornadoFX.
+And even though it contains a lot of interesting ideas there were also concepts that we absolutely did not like:
+* it forces you to learn a completely new language (DSL) to build your JavaFX application
+* it does not promote using FXML for building GUIs (though it does support it), which we think of as a killer feature especially when used with the excellent [SceneBuilder](https://gluonhq.com/products/scene-builder/)
+* it contains functionality that we do not expect in a JavaFX wrapper (injection framework, REST client, additional controls, ...)
+* the resulting code from using the DSL is not very clear or intuitive from the technical perspective (why does this work?) and thus makes debugging harder
+
+If you are completely new to JavaFX and want this complete package, TornadoFX might just be the thing for you.
+
+We on the other hand want to address developers with experience in building JavaFX applications and do not want to relearn their entire skill set.
+ 
+Our goal is to make your life just a little bit easier when developing JavaFX applications with Kotlin without forcing stuff onto you that you do not want or need.
+
+
 ## Usage
 
 To use KopperFX, it can be easily integrated as a dependency:
@@ -59,6 +75,14 @@ dependencies {
 ## Examples
 
 The following examples show the differences between the current usage of JavaFX in Kotlin and the usage with KopperFX.
+
+### Handling JavaFX properties
+```kotlin
+import com.github.gonozalviii.kopperfx.extensions.*
+
+val nameProperty = SimpleStringProperty("")
+var name: String by nameProperty 
+```
 
 ### Adding and removing Children
 
