@@ -16,7 +16,6 @@
 
 package com.github.gonozalviii.kopperfx.utility
 
-import com.sun.javafx.application.LauncherImpl
 import javafx.animation.AnimationTimer
 import javafx.application.Application
 import javafx.application.Platform
@@ -44,10 +43,11 @@ fun animationTimer(start: Boolean = true, block: () -> Unit): AnimationTimer {
     }
 }
 
-inline fun <reified T: Application> launch(args: Array<String>) = LauncherImpl.launchApplication(T::class.java, args)
+inline fun <reified T: Application> launch(args: Array<String>) = Application.launch(T::class.java, *args)
 
-inline fun <reified T: Application> launch(args: Array<String>, preloader: KClass<out Preloader>) {
-    LauncherImpl.launchApplication(T::class.java, preloader.java, args)
+inline fun <reified T: Application> launch(args: Array<String>, preloader: Class<out Preloader>) {
+    System.setProperty("javafx.preloader", preloader.name)
+    Application.launch(T::class.java, *args)
 }
 
 inline fun <reified T> loadFXML(url: String, noinline controllerFactory: ((Class<*>) -> Any)? = null): T {

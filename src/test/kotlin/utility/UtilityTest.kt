@@ -53,7 +53,7 @@ class UtilityTest {
         @Disabled("only run manually, since launch can only be called once per VM")
         @DisplayName("calling launch application with parameter should start application")
         fun launchApplicationParameter() {
-            launch<TestApp>(arrayOf(), TestPreLoader::class)
+            launch<TestApp>(arrayOf(), TestPreLoader::class.java)
             assertEquals("launched", testResult, "application was not launched")
             assertEquals("pre loaded", preloadResult, "pre-loader was not launched")
         }

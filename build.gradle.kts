@@ -4,7 +4,7 @@ group = "com.github.gonozalviii"
 version = "0.5"
 
 plugins {
-    kotlin("jvm") version "1.2.31"
+    kotlin("jvm") version "1.2.40"
     `maven-publish`
 }
 
@@ -38,7 +38,7 @@ tasks {
     }
 
     withType<Wrapper> {
-        gradleVersion = "4.6"
+        gradleVersion = "4.7"
     }
 
 }
