@@ -40,6 +40,7 @@ tasks {
 
     withType<Test> {
         useJUnitPlatform()
+        setForkEvery(1)
     }
 
     withType<Wrapper> {

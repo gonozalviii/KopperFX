@@ -16,22 +16,27 @@
 
 package utility
 
-import com.github.gonozalviii.kopperfx.utility.loadFXML
-import javafx.scene.layout.AnchorPane
-import org.junit.jupiter.api.Assertions.assertEquals
+import com.github.gonozalviii.kopperfx.utility.launch
+import javafx.application.Platform
+import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 
 
-class UtilityTest {
+class LaunchTest {
 
+    companion object {
+        @JvmStatic
+        var testResult = ""
+    }
 
     @Test
-    @DisplayName("reading an fxml file should create a anchor pane with correct attributes")
-    fun readingFxml() {
-        val anchorPane = loadFXML<AnchorPane>("/test.fxml")
-        assertEquals(639.0,anchorPane.prefWidth, "pane has incorrect width")
-        assertEquals(417.0,anchorPane.prefHeight, "pane has incorrect height")
+    @DisplayName("calling launch application with generic type should start application")
+    fun launchApplicationGenericType() {
+        print("running launch")
+        launch<TestApp>(arrayOf())
+        Assertions.assertEquals("launched", testResult, "application was not launched")
+        Platform.exit()
     }
 
 }

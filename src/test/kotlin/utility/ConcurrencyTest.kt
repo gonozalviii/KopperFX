@@ -1,4 +1,4 @@
-package utility/*
+/*
  * Copyright 2018 Peer Schoenhusen & Ramon Victor
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +13,8 @@ package utility/*
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+package utility
 
 import base.AbstractJavaFxTestBase
 import com.github.gonozalviii.kopperfx.utility.fxThread
