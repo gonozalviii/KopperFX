@@ -188,7 +188,7 @@ class TabTest : AbstractJavaFxTestBase() {
 
         tabpane.selectedItem = tab2
 
-        assertEquals(tab2, tabpane.selectionModel.selectedItem, "selectedItem should get selected item")
+        assertEquals(tab2, tabpane.selectionModel.selectedItem, "selectedItem should set selected item")
     }
 
     @Test
