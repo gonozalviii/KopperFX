@@ -44,7 +44,7 @@ fun <T> TableView<T>.removeRange(from: Int, to: Int) = this.items.remove(from, t
 
 fun <T> TableView<T>.removeRange(range: ClosedRange<Int>) = this.items.remove(range.start, range.endInclusive)
 
-fun <T> TableView<T>.getSelectedItems() = this.selectionModel.selectedItems
+fun <T> TableView<T>.getSelectedItems(): List<T> = this.selectionModel.selectedItems
 
 fun <T> TableView<T>.focusIndex(index: Int) = this.focusModel.focus(index)
 
