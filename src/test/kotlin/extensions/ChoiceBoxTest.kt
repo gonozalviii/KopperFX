@@ -137,5 +137,61 @@ class ChoiceBoxTest : AbstractJavaFxTestBase() {
         assertEquals(button3, choiceBox.items[0], "choiceBox should only contain specific button")
     }
 
+    @Test
+    @DisplayName("selectedItem as get on choiceBox gets buttons")
+    fun selectedItemAsGetGetsButton() {
+        val choiceBox = ChoiceBox<Button>()
+        val button1 = Button()
+        val button2 = Button()
+        val button3 = Button()
+        choiceBox.items.addAll(button1, button2, button3)
+
+        choiceBox.selectionModel.select(button2)
+
+        assertEquals(button2, choiceBox.selectedItem, "selected item should be specific button")
+    }
+
+    @Test
+    @DisplayName("selectedItem as set on choiceBox sets buttons")
+    fun selectedItemAsSetSetsButton() {
+        val choiceBox = ChoiceBox<Button>()
+        val button1 = Button()
+        val button2 = Button()
+        val button3 = Button()
+        choiceBox.items.addAll(button1, button2, button3)
+
+        choiceBox.selectedItem = button2
+
+        assertEquals(button2, choiceBox.selectionModel.selectedItem, "selected item should be specific button")
+    }
+
+    @Test
+    @DisplayName("selectedIndex as get on choiceBox gets index")
+    fun selectedIndexAsGetGetsIndex() {
+        val choiceBox = ChoiceBox<Button>()
+        val button1 = Button()
+        val button2 = Button()
+        val button3 = Button()
+        choiceBox.items.addAll(button1, button2, button3)
+
+        choiceBox.selectionModel.select(1)
+
+        assertEquals(1, choiceBox.selectedIndex, "selected index should be index")
+    }
+
+    @Test
+    @DisplayName("selectedIndex as set on choiceBox sets index")
+    fun selectedIndexAsSetSetsIndex() {
+        val choiceBox = ChoiceBox<Button>()
+        val button1 = Button()
+        val button2 = Button()
+        val button3 = Button()
+        choiceBox.items.addAll(button1, button2, button3)
+
+        choiceBox.selectedIndex = 1
+
+        assertEquals(1, choiceBox.selectionModel.selectedIndex, "selected index should be index")
+    }
+
 
 }

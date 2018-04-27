@@ -137,4 +137,60 @@ class ComboBoxTest : AbstractJavaFxTestBase() {
         assertEquals(button3, comboBox.items[0], "comboBox should only contain specific button")
     }
 
+    @Test
+    @DisplayName("selectedItem as get on comboBox gets buttons")
+    fun selectedItemAsGetGetsButton() {
+        val comboBox = ComboBox<Button>()
+        val button1 = Button()
+        val button2 = Button()
+        val button3 = Button()
+        comboBox.items.addAll(button1, button2, button3)
+
+        comboBox.selectionModel.select(button2)
+
+        assertEquals(button2, comboBox.selectedItem, "selected item should be specific button")
+    }
+
+    @Test
+    @DisplayName("selectedItem as set on comboBox sets buttons")
+    fun selectedItemAsSetSetsButton() {
+        val comboBox = ComboBox<Button>()
+        val button1 = Button()
+        val button2 = Button()
+        val button3 = Button()
+        comboBox.items.addAll(button1, button2, button3)
+
+        comboBox.selectedItem = button2
+
+        assertEquals(button2, comboBox.selectionModel.selectedItem, "selected item should be specific button")
+    }
+
+    @Test
+    @DisplayName("selectedIndex as get on comboBox gets index")
+    fun selectedIndexAsGetGetsIndex() {
+        val comboBox = ComboBox<Button>()
+        val button1 = Button()
+        val button2 = Button()
+        val button3 = Button()
+        comboBox.items.addAll(button1, button2, button3)
+
+        comboBox.selectionModel.select(1)
+
+        assertEquals(1, comboBox.selectedIndex, "selected index should be index")
+    }
+
+    @Test
+    @DisplayName("selectedIndex as set on comboBox sets index")
+    fun selectedIndexAsSetSetsIndex() {
+        val comboBox = ComboBox<Button>()
+        val button1 = Button()
+        val button2 = Button()
+        val button3 = Button()
+        comboBox.items.addAll(button1, button2, button3)
+
+        comboBox.selectedIndex = 1
+
+        assertEquals(1, comboBox.selectionModel.selectedIndex, "selected index should be index")
+    }
+
 }
