@@ -81,6 +81,8 @@ fun <T> ListView<T>.selectLast() = this.selectionModel.selectLast()
 
 fun <T> ListView<T>.selectAll() = this.selectionModel.selectAll()
 
+fun <T> ListView<T>.isSelected(index: Int) = this.selectionModel.isSelected(index)
+
 fun <T> ListView<T>.selectRange(start: Int, end: Int) = this.selectionModel.selectRange(start, end)
 
 fun <T> ListView<T>.selectRange(range: ClosedRange<Int>) = this.selectionModel.selectRange(range.start, range.endInclusive)

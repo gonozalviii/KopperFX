@@ -290,6 +290,19 @@ class ListTest : AbstractJavaFxTestBase() {
     }
 
     @Test
+    @DisplayName("isSelected returns boolean")
+    fun isSelectedReturnsBoolean() {
+        val listview = ListView<Button>()
+        val button1 = Button()
+        val button2 = Button()
+        val button3 = Button()
+        listview.items.addAll(button1, button2, button3)
+        listview.selectionModel.select(2)
+
+        assertTrue(listview.isSelected(2), "isSelected should return true")
+    }
+
+    @Test
     @DisplayName("selectAll on listview selects all")
     fun selectAllSelectsAll() {
         val listview = ListView<Button>()
