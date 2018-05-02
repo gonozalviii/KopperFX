@@ -62,7 +62,7 @@ var <T> ListView<T>.focusedIndex
     get() = this.focusModel.focusedIndex
     set(index) = this.focusModel.focus(index)
 
-val <T> ListView<T>.focusedItem: Any?
+val <T> ListView<T>.focusedItem: T?
     get() = this.focusModel.focusedItem
 
 fun <T> ListView<T>.focusNext() = this.focusModel.focusNext()
