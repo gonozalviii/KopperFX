@@ -51,6 +51,8 @@ fun TabPane.selectLast() = this.selectionModel.selectLast()
 
 fun TabPane.selectNext() = this.selectionModel.selectNext()
 
+fun TabPane.isSelected(index: Int) = this.selectionModel.isSelected(index)
+
 fun TabPane.selectPrevious() = this.selectionModel.selectPrevious()
 
 var TabPane.selectedIndex: Int

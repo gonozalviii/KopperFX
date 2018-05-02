@@ -249,4 +249,17 @@ class TabTest : AbstractJavaFxTestBase() {
         assertTrue(tabpane.selectionModel.isSelected(1), "selectPrevious should select previous index")
     }
 
+    @Test
+    @DisplayName("isSelected on tabpane returns boolean")
+    fun isSelectedReturnsBoolean() {
+        val tabpane = TabPane()
+        val tab1 = Tab()
+        val tab2 = Tab()
+        val tab3 = Tab()
+        tabpane.tabs.addAll(tab1, tab2, tab3)
+        tabpane.selectionModel.select(2)
+
+        assertTrue(tabpane.isSelected(2), "isSelected should return true")
+    }
+
 }
