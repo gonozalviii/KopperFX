@@ -353,4 +353,16 @@ class ListTest : AbstractJavaFxTestBase() {
         assertFalse(listview.selectionModel.isSelected(2), "selectAll should not select last index")
     }
 
+    @Test
+    @DisplayName("contains should return boolean")
+    fun containsShouldReturnBoolean() {
+        val listview = ListView<Button>()
+        val button1 = Button()
+        val button2 = Button()
+        val button3 = Button()
+        listview.items.addAll(button1, button2, button3)
+
+        assertTrue(listview.contains(button2), "contains should return true")
+    }
+
 }

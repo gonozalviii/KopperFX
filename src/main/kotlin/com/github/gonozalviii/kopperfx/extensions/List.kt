@@ -52,6 +52,8 @@ fun <T> ListView<T>.getItemFrom(index: Int): T = this.items[index]
 
 fun <T> ListView<T>.addAll(vararg items: T) = this.items.addAll(items)
 
+fun <T> ListView<T>.contains(item: T) = this.items.contains(item)
+
 fun <T> ListView<T>.removeAll(vararg items: T) = this.items.removeAll(items)
 
 fun <T> ListView<T>.removeRange(from: Int, to: Int) = this.items.remove(from, to)
