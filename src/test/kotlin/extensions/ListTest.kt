@@ -24,6 +24,7 @@ import javafx.scene.control.SelectionMode
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
+import java.util.function.Predicate
 
 class ListTest : AbstractJavaFxTestBase() {
 
@@ -363,6 +364,26 @@ class ListTest : AbstractJavaFxTestBase() {
         listview.items.addAll(button1, button2, button3)
 
         assertTrue(listview.contains(button2), "contains should return true")
+    }
+
+    @Test
+    @DisplayName("filtered should create filteredListWrapper")
+    fun filteredShouldCreateFilteredListWrapper() {
+        val listview = ListView<String>()
+        val testString1 = "TestString1"
+        val testString2 = "TestString2"
+        val testString3 = "FilteredString1"
+        val testString4 = "TestString3"
+        val testString5 = "FilteredString2"
+        listview.addAll(testString1, testString2, testString3, testString4, testString5)
+
+        val filteredList = listview.filtered(Predicate { t -> t.startsWith("Filtered") })
+
+        assertFalse(filteredList.contains(testString1), "filteredList should not contain testString1")
+        assertFalse(filteredList.contains(testString2), "filteredList should not contain testString2")
+        assertTrue(filteredList.contains(testString3), "filteredList should contain testString3")
+        assertFalse(filteredList.contains(testString4), "filteredList should not contain testString4")
+        assertTrue(filteredList.contains(testString5), "filteredList should contain testString5")
     }
 
 }
