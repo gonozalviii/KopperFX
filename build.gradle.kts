@@ -21,10 +21,6 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
     testImplementation("org.junit", "junit-bom", "5.2.0")
     testImplementation("org.junit.jupiter", "junit-jupiter-engine")
-    val mockitoVersion = "2.18.3"
-    testImplementation("org.mockito", "mockito-core", mockitoVersion)
-    testImplementation("org.mockito", "mockito-inline", mockitoVersion)
-    testImplementation("org.mockito", "mockito-junit-jupiter", mockitoVersion)
 }
 
 tasks {
