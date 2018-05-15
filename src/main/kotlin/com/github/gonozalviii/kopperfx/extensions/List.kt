@@ -55,7 +55,7 @@ fun <T> ListView<T>.addAll(vararg items: T) = this.items.addAll(items)
 
 fun <T> ListView<T>.contains(item: T) = this.items.contains(item)
 
-fun <T> ListView<T>.filtered(predicate: Predicate<T>) = this.items.filtered(predicate)
+fun <T> ListView<T>.filtered(predicate: Predicate<T>): ObservableList<T> = this.items.filtered(predicate)
 
 fun <T> ListView<T>.removeAll(vararg items: T) = this.items.removeAll(items)
 

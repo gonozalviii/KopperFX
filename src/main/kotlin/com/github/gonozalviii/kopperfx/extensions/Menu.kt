@@ -31,9 +31,9 @@ operator fun MenuBar.minusAssign(menu: Menu) {
     this.menus -= menu
 }
 
-fun MenuBar.addAll(vararg menues: Menu) = this.menus.addAll(menues)
+fun MenuBar.addAll(vararg menus: Menu) = this.menus.addAll(menus)
 
-fun MenuBar.removeAll(vararg menues: Menu) = this.menus.removeAll(menues)
+fun MenuBar.removeAll(vararg menus: Menu) = this.menus.removeAll(menus)
 
 fun MenuBar.addAt(index: Int, menu: Menu) = this.menus.add(index, menu)
 
