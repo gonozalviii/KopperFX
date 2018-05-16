@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 group = "com.github.gonozalviii"
-version = "0.5"
+version = "0.6"
 
 plugins {
     kotlin("jvm") version "1.2.41"

@@ -40,7 +40,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.gonozalviii:KopperFX:0.5'
+    compile 'com.github.gonozalviii:KopperFX:0.6'
 }
 ```
 
@@ -52,7 +52,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.gonozalviii:KopperFX:0.5")
+    implementation("com.github.gonozalviii:KopperFX:0.6")
 }
 ```
 
@@ -68,7 +68,7 @@ dependencies {
 <dependency>
     <groupId>com.github.gonozalviii</groupId>
     <artifactId>KopperFX</artifactId>
-    <version>0.5</version>
+    <version>0.6</version>
 </dependency>
 ```
 
