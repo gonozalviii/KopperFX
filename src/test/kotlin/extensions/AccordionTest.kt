@@ -21,14 +21,12 @@ import com.github.gonozalviii.kopperfx.extensions.*
 import javafx.scene.control.Accordion
 import javafx.scene.control.TitledPane
 import org.junit.jupiter.api.Assertions.*
-import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 
 class AccordionTest : AbstractJavaFxTestBase() {
 
     @Test
-    @DisplayName("plus assign on accordion adds titledpane")
-    fun plusAssignAddsTitledPane() {
+    fun `plus assign on accordion adds titledpane`() {
         val accordion = Accordion()
         val titledPane = TitledPane()
 
@@ -38,8 +36,7 @@ class AccordionTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("minus assign on accordion removes titledpane")
-    fun minusAssignRemovesTitledPane() {
+    fun `minus assign on accordion removes titledpane`() {
         val accordion = Accordion()
         val titledPane = TitledPane()
         accordion.panes.add(titledPane)
@@ -50,8 +47,7 @@ class AccordionTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("addAll on accordion adds all titledpanes")
-    fun addAllAddsAllTitledPanes() {
+    fun `addAll on accordion adds all titledpanes`() {
         val accordion = Accordion()
         val titledPane1 = TitledPane()
         val titledPane2 = TitledPane()
@@ -65,8 +61,7 @@ class AccordionTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeAll on accordion removes all titledpanes")
-    fun removeAllRemovesAllTitledPanes() {
+    fun `removeAll on accordion removes all titledpanes`() {
         val accordion = Accordion()
         val titledPane1 = TitledPane()
         val titledPane2 = TitledPane()
@@ -81,8 +76,7 @@ class AccordionTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("addAt on accordion adds titledpane at index")
-    fun addAtAddsTitledPaneAtIndex() {
+    fun `addAt on accordion adds titledpane at index`() {
         val accordion = Accordion()
         val titledPane = TitledPane()
         val titledPane1 = TitledPane()
@@ -96,8 +90,7 @@ class AccordionTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeAt on accordion removes titledpane at index")
-    fun removeAtRemovesTitledPaneAtIndex() {
+    fun `removeAt on accordion removes titledpane at index`() {
         val accordion = Accordion()
         val titledPane1 = TitledPane()
         val titledPane2 = TitledPane()
@@ -108,8 +101,7 @@ class AccordionTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeRange on accordion removes titledpanes in range")
-    fun removeRangeRemovesTitledPanesInRange() {
+    fun `removeRange on accordion removes titledpanes in range`() {
         val accordion = Accordion()
         val titledPane1 = TitledPane()
         val titledPane2 = TitledPane()
@@ -123,8 +115,7 @@ class AccordionTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeRange with range on accordion removes titledpanes in range")
-    fun removeRangeWithRangeRemovesTitledPanesInRange() {
+    fun `removeRange with range on accordion removes titledpanes in range`() {
         val accordion = Accordion()
         val titledPane1 = TitledPane()
         val titledPane2 = TitledPane()

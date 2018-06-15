@@ -25,7 +25,6 @@ import javafx.scene.layout.AnchorPane
 import javafx.stage.Stage
 import org.junit.jupiter.api.Assertions.assertTimeout
 import org.junit.jupiter.api.Assertions.assertTrue
-import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import java.time.Duration
 import kotlin.concurrent.thread
@@ -38,8 +37,7 @@ class FxmlAppTest {
     }
 
     @Test
-    @DisplayName("launch app with fxml provided in constructor")
-    fun startFxmlApp() {
+    fun `launch app with fxml provided in constructor`() {
         thread {
             assertTimeout(Duration.ofSeconds(10)) {
                 while (appStarted.not()) {

@@ -21,14 +21,12 @@ import com.github.gonozalviii.kopperfx.extensions.*
 import javafx.scene.control.Button
 import javafx.scene.control.TreeItem
 import org.junit.jupiter.api.Assertions.*
-import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 
 class TreeTest : AbstractJavaFxTestBase(){
 
     @Test
-    @DisplayName("plus assign on treeitem adds subTreeItem")
-    fun plusAssignAddsTreeItem() {
+    fun `plus assign on treeitem adds subTreeItem`() {
         val treeItem = TreeItem<Button>()
         val subTreeItem = TreeItem<Button>()
 
@@ -38,8 +36,7 @@ class TreeTest : AbstractJavaFxTestBase(){
     }
 
     @Test
-    @DisplayName("minus assign on treeitem removes subTreeItem")
-    fun minusAssignRemovesTreeItem() {
+    fun `minus assign on treeitem removes subTreeItem`() {
         val treeItem = TreeItem<Button>()
         val subTreeItem = TreeItem<Button>()
 
@@ -49,8 +46,7 @@ class TreeTest : AbstractJavaFxTestBase(){
     }
 
     @Test
-    @DisplayName("addAll on treeitem adds all subTreeItems")
-    fun addAllAddsAllTreeItems() {
+    fun `addAll on treeitem adds all subTreeItems`() {
         val treeItem = TreeItem<Button>()
         val subTreeItem1 = TreeItem<Button>()
         val subTreeItem2 = TreeItem<Button>()
@@ -64,8 +60,7 @@ class TreeTest : AbstractJavaFxTestBase(){
     }
 
     @Test
-    @DisplayName("removeAll on treeitem removes all subTreeItems")
-    fun removeAllRemovesAllTreeItems() {
+    fun `removeAll on treeitem removes all subTreeItems`() {
         val treeItem = TreeItem<Button>()
         val subTreeItem1 = TreeItem<Button>()
         val subTreeItem2 = TreeItem<Button>()
@@ -81,8 +76,7 @@ class TreeTest : AbstractJavaFxTestBase(){
 
 
     @Test
-    @DisplayName("addAt on treeitem adds subTreeItem at index")
-    fun addAtAddsTreeItemAtIndex() {
+    fun `addAt on treeitem adds subTreeItem at index`() {
         val treeItem = TreeItem<Button>()
         val subTreeItem = TreeItem<Button>()
         val subTreeItem1 = TreeItem<Button>()
@@ -96,8 +90,7 @@ class TreeTest : AbstractJavaFxTestBase(){
     }
 
     @Test
-    @DisplayName("removeAt on treeitem removes subTreeItem at index")
-    fun removeAtRemovesTreeItemAtIndex() {
+    fun `removeAt on treeitem removes subTreeItem at index`() {
         val treeItem = TreeItem<Button>()
         val subTreeItem1 = TreeItem<Button>()
         val subTreeItem2 = TreeItem<Button>()
@@ -108,8 +101,7 @@ class TreeTest : AbstractJavaFxTestBase(){
     }
 
     @Test
-    @DisplayName("removeRange on treeitem removes subTreeItems in range")
-    fun removeRangeRemovesTreeItemsInRange() {
+    fun `removeRange on treeitem removes subTreeItems in range`() {
         val treeItem = TreeItem<Button>()
         val subTreeItem1 = TreeItem<Button>()
         val subTreeItem2 = TreeItem<Button>()
@@ -123,8 +115,7 @@ class TreeTest : AbstractJavaFxTestBase(){
     }
 
     @Test
-    @DisplayName("removeRange with range on treeitem removes subTreeItems in range")
-    fun removeRangeWithRangeRemovesTreeItemsInRange() {
+    fun `removeRange with range on treeitem removes subTreeItems in range`() {
         val treeItem = TreeItem<Button>()
         val subTreeItem1 = TreeItem<Button>()
         val subTreeItem2 = TreeItem<Button>()

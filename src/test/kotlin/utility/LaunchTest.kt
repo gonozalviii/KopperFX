@@ -19,7 +19,6 @@ package utility
 import com.github.gonozalviii.kopperfx.utility.launch
 import javafx.application.Platform
 import org.junit.jupiter.api.Assertions
-import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 
 
@@ -31,8 +30,7 @@ class LaunchTest {
     }
 
     @Test
-    @DisplayName("calling launch application with generic type should start application")
-    fun launchApplicationGenericType() {
+    fun `calling launch application with generic type should start application`() {
         print("running launch")
         launch<TestApp>(arrayOf())
         Assertions.assertEquals("launched", testResult, "application was not launched")

@@ -21,14 +21,12 @@ import com.github.gonozalviii.kopperfx.extensions.*
 import javafx.scene.control.Button
 import javafx.scene.control.ChoiceBox
 import org.junit.jupiter.api.Assertions.*
-import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 
 class ChoiceBoxTest : AbstractJavaFxTestBase() {
 
     @Test
-    @DisplayName("plus assign on choiceBox adds button")
-    fun plusAssignAddsButton() {
+    fun `plus assign on choiceBox adds button`() {
         val choiceBox = ChoiceBox<Button>()
         val button = Button()
 
@@ -38,8 +36,7 @@ class ChoiceBoxTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("minus assign on choiceBox removes button")
-    fun minusAssignRemovesButton() {
+    fun `minus assign on choiceBox removes button`() {
         val choiceBox = ChoiceBox<Button>()
         val button = Button()
 
@@ -49,8 +46,7 @@ class ChoiceBoxTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("addAll on choiceBox adds all buttons")
-    fun addAllAddsAllButtons() {
+    fun `addAll on choiceBox adds all buttons`() {
         val choiceBox = ChoiceBox<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -64,8 +60,7 @@ class ChoiceBoxTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeAll on choiceBox removes all buttons")
-    fun removeAllRemovesAllButtons() {
+    fun `removeAll on choiceBox removes all buttons`() {
         val choiceBox = ChoiceBox<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -81,8 +76,7 @@ class ChoiceBoxTest : AbstractJavaFxTestBase() {
 
 
     @Test
-    @DisplayName("addAt on choiceBox adds button at index")
-    fun addAtAddsButtonAtIndex() {
+    fun `addAt on choiceBox adds button at index`() {
         val choiceBox = ChoiceBox<Button>()
         val button = Button()
         val button1 = Button()
@@ -96,8 +90,7 @@ class ChoiceBoxTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeAt on choiceBox removes button at index")
-    fun removeAtRemovesButtonAtIndex() {
+    fun `removeAt on choiceBox removes button at index`() {
         val choiceBox = ChoiceBox<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -108,8 +101,7 @@ class ChoiceBoxTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeRange on choiceBox removes buttons in range")
-    fun removeRangeRemovesButtonsInRange() {
+    fun `removeRange on choiceBox removes buttons in range`() {
         val choiceBox = ChoiceBox<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -123,8 +115,7 @@ class ChoiceBoxTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeRange with range on choiceBox removes buttons in range")
-    fun removeRangeWithRangeRemovesButtonsInRange() {
+    fun `removeRange with range on choiceBox removes buttons in range`() {
         val choiceBox = ChoiceBox<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -138,8 +129,7 @@ class ChoiceBoxTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("selectedItem as get on choiceBox gets buttons")
-    fun selectedItemAsGetGetsButton() {
+    fun `selectedItem as get on choiceBox gets buttons`() {
         val choiceBox = ChoiceBox<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -152,8 +142,7 @@ class ChoiceBoxTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("selectedItem as set on choiceBox sets buttons")
-    fun selectedItemAsSetSetsButton() {
+    fun `selectedItem as set on choiceBox sets buttons`() {
         val choiceBox = ChoiceBox<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -166,8 +155,7 @@ class ChoiceBoxTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("selectedIndex as get on choiceBox gets index")
-    fun selectedIndexAsGetGetsIndex() {
+    fun `selectedIndex as get on choiceBox gets index`() {
         val choiceBox = ChoiceBox<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -180,8 +168,7 @@ class ChoiceBoxTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("selectedIndex as set on choiceBox sets index")
-    fun selectedIndexAsSetSetsIndex() {
+    fun `selectedIndex as set on choiceBox sets index`() {
         val choiceBox = ChoiceBox<Button>()
         val button1 = Button()
         val button2 = Button()

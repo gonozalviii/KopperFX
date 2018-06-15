@@ -22,14 +22,12 @@ import javafx.scene.control.Button
 import javafx.scene.control.SelectionMode
 import javafx.scene.control.TableView
 import org.junit.jupiter.api.Assertions.*
-import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 
 class TableTest : AbstractJavaFxTestBase() {
 
     @Test
-    @DisplayName("plus assign on tableview adds button")
-    fun plusAssignAddsButton() {
+    fun `plus assign on tableview adds button`() {
         val tableview = TableView<Button>()
         val button = Button()
 
@@ -39,8 +37,7 @@ class TableTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("minus assign on tableview removes button")
-    fun minusAssignRemovesButton() {
+    fun `minus assign on tableview removes button`() {
         val tableview = TableView<Button>()
         val button = Button()
 
@@ -50,8 +47,7 @@ class TableTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("addAll on tableview adds all buttons")
-    fun addAllAddsAllButtons() {
+    fun `addAll on tableview adds all buttons`() {
         val tableview = TableView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -65,8 +61,7 @@ class TableTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeAll on tableview removes all buttons")
-    fun removeAllRemovesAllButtons() {
+    fun `removeAll on tableview removes all buttons`() {
         val tableview = TableView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -82,8 +77,7 @@ class TableTest : AbstractJavaFxTestBase() {
 
 
     @Test
-    @DisplayName("addAt on tableview adds button at index")
-    fun addAtAddsButtonAtIndex() {
+    fun `addAt on tableview adds button at index`() {
         val tableview = TableView<Button>()
         val button = Button()
         val button1 = Button()
@@ -97,8 +91,7 @@ class TableTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeAt on tableview removes button at index")
-    fun removeAtRemovesButtonAtIndex() {
+    fun `removeAt on tableview removes button at index`() {
         val tableview = TableView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -109,8 +102,7 @@ class TableTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeRange on tableview removes buttons in range")
-    fun removeRangeRemovesButtonsInRange() {
+    fun `removeRange on tableview removes buttons in range`() {
         val tableview = TableView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -124,8 +116,7 @@ class TableTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeRange with range on tableview removes buttons in range")
-    fun removeRangeWithRangeRemovesButtonsInRange() {
+    fun `removeRange with range on tableview removes buttons in range`() {
         val tableview = TableView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -139,8 +130,7 @@ class TableTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("getSelectedItems on tableview gets selected buttons")
-    fun getSelectedItemsGetsSelectedButtons() {
+    fun `getSelectedItems on tableview gets selected buttons`() {
         val tableview = TableView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -157,8 +147,7 @@ class TableTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("focusIndex on tableview focus index")
-    fun focusIndexFocusIndex() {
+    fun `focusIndex on tableview focus index`() {
         val tableview = TableView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -171,8 +160,7 @@ class TableTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("getIndexOf on tableview gets index of button")
-    fun getIndexOfGetsIndexOfButton() {
+    fun `getIndexOf on tableview gets index of button`() {
         val tableview = TableView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -184,8 +172,7 @@ class TableTest : AbstractJavaFxTestBase() {
 
 
     @Test
-    @DisplayName("selectedIndex as get on tableview gets selected index")
-    fun selectedIndexAsGetGetsSelectedIndex() {
+    fun `selectedIndex as get on tableview gets selected index`() {
         val tableview = TableView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -197,8 +184,7 @@ class TableTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("selectedIndex as set on tableview sets selected index")
-    fun selectedIndexAsSetSetsSelectedIndex() {
+    fun `selectedIndex as set on tableview sets selected index`() {
         val tableview = TableView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -211,8 +197,7 @@ class TableTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("selectedItem on tableview gets selected tab")
-    fun selectedItemGetsSelectedButton() {
+    fun `selectedItem on tableview gets selected tab`() {
         val tableview = TableView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -224,8 +209,7 @@ class TableTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("selectedItem as set on tableview gets selected tab")
-    fun selectedItemAsSetSetsSelectedItem() {
+    fun `selectedItem as set on tableview gets selected tab`() {
         val tableview = TableView<Button>()
         val button1 = Button()
         val button2 = Button()
