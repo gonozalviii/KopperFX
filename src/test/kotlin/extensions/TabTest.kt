@@ -21,14 +21,12 @@ import com.github.gonozalviii.kopperfx.extensions.*
 import javafx.scene.control.Tab
 import javafx.scene.control.TabPane
 import org.junit.jupiter.api.Assertions.*
-import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 
 class TabTest : AbstractJavaFxTestBase() {
 
     @Test
-    @DisplayName("plus assign on tabpane adds tab")
-    fun plusAssignAddsTab() {
+    fun `plus assign on tabpane adds tab`() {
         val tabpane = TabPane()
         val tab = Tab()
 
@@ -38,8 +36,7 @@ class TabTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("minus assign on tabpane removes tab")
-    fun minusAssignRemovesTab() {
+    fun `minus assign on tabpane removes tab`() {
         val tabpane = TabPane()
         val tab = Tab()
 
@@ -49,8 +46,7 @@ class TabTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("addAll on tabpane adds all tabs")
-    fun addAllAddsAllTabs() {
+    fun `addAll on tabpane adds all tabs`() {
         val tabpane = TabPane()
         val tab1 = Tab()
         val tab2 = Tab()
@@ -64,8 +60,7 @@ class TabTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeAll on tabpane removes all tabs")
-    fun removeAllRemovesAllTabs() {
+    fun `removeAll on tabpane removes all tabs`() {
         val tabpane = TabPane()
         val tab1 = Tab()
         val tab2 = Tab()
@@ -81,8 +76,7 @@ class TabTest : AbstractJavaFxTestBase() {
 
 
     @Test
-    @DisplayName("addAt on tabpane adds tab at index")
-    fun addAtAddsTabAtIndex() {
+    fun `addAt on tabpane adds tab at index`() {
         val tabpane = TabPane()
         val tab = Tab()
         val tab1 = Tab()
@@ -96,8 +90,7 @@ class TabTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeAt on tabpane removes tab at index")
-    fun removeAtRemovesTabAtIndex() {
+    fun `removeAt on tabpane removes tab at index`() {
         val tabpane = TabPane()
         val tab1 = Tab()
         val tab2 = Tab()
@@ -108,8 +101,7 @@ class TabTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeRange on tabpane removes tabs in range")
-    fun removeRangeRemovesTabsInRange() {
+    fun `removeRange on tabpane removes tabs in range`() {
         val tabpane = TabPane()
         val tab1 = Tab()
         val tab2 = Tab()
@@ -123,8 +115,7 @@ class TabTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeRange with range on tabpane removes tabs in range")
-    fun removeRangeWithRangeRemovesTabsInRange() {
+    fun `removeRange with range on tabpane removes tabs in range`() {
         val tabpane = TabPane()
         val tab1 = Tab()
         val tab2 = Tab()
@@ -138,8 +129,7 @@ class TabTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("selectedIndex as get on tabpane gets selected index")
-    fun selectedIndexAsGetGetsSelectedIndex() {
+    fun `selectedIndex as get on tabpane gets selected index`() {
         val tabpane = TabPane()
         val tab1 = Tab()
         val tab2 = Tab()
@@ -151,8 +141,7 @@ class TabTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("selectedIndex as set on tabpane sets selected index")
-    fun selectedIndexAsSetSetsSelectedIndex() {
+    fun `selectedIndex as set on tabpane sets selected index`() {
         val tabpane = TabPane()
         val tab1 = Tab()
         val tab2 = Tab()
@@ -165,8 +154,7 @@ class TabTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("selectedItem on tabpane gets selected tab")
-    fun selectedItemGetsSelectedTab() {
+    fun `selectedItem on tabpane gets selected tab`() {
         val tabpane = TabPane()
         val tab1 = Tab()
         val tab2 = Tab()
@@ -178,8 +166,7 @@ class TabTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("selectedItem as set on tabpane gets selected tab")
-    fun selectedItemAsSetSetsSelectedItem() {
+    fun `selectedItem as set on tabpane gets selected tab`() {
         val tabpane = TabPane()
         val tab1 = Tab()
         val tab2 = Tab()
@@ -192,8 +179,7 @@ class TabTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("selectFirst on tabpane selects first index")
-    fun selectFirstSelectsFirstIndex() {
+    fun `selectFirst on tabpane selects first index`() {
         val tabpane = TabPane()
         val tab1 = Tab()
         val tab2 = Tab()
@@ -206,8 +192,7 @@ class TabTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("selectLast on tabpane selects last index")
-    fun selectLastSelectsLastIndex() {
+    fun `selectLast on tabpane selects last index`() {
         val tabpane = TabPane()
         val tab1 = Tab()
         val tab2 = Tab()
@@ -220,8 +205,7 @@ class TabTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("selectNext on tabpane selects next index")
-    fun selectNextSelectsNextIndex() {
+    fun `selectNext on tabpane selects next index`() {
         val tabpane = TabPane()
         val tab1 = Tab()
         val tab2 = Tab()
@@ -235,8 +219,7 @@ class TabTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("selectPrevious on tabpane selects previous index")
-    fun selectPreviousSelectsPreviousIndex() {
+    fun `selectPrevious on tabpane selects previous index`() {
         val tabpane = TabPane()
         val tab1 = Tab()
         val tab2 = Tab()
@@ -250,8 +233,7 @@ class TabTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("isSelected on tabpane returns boolean")
-    fun isSelectedReturnsBoolean() {
+    fun `isSelected on tabpane returns boolean`() {
         val tabpane = TabPane()
         val tab1 = Tab()
         val tab2 = Tab()

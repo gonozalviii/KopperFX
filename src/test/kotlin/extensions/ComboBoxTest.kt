@@ -21,14 +21,12 @@ import com.github.gonozalviii.kopperfx.extensions.*
 import javafx.scene.control.Button
 import javafx.scene.control.ComboBox
 import org.junit.jupiter.api.Assertions.*
-import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 
 class ComboBoxTest : AbstractJavaFxTestBase() {
 
     @Test
-    @DisplayName("plus assign on comboBox adds button")
-    fun plusAssignAddsButton() {
+    fun `plus assign on comboBox adds button`() {
         val comboBox = ComboBox<Button>()
         val button = Button()
 
@@ -38,8 +36,7 @@ class ComboBoxTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("minus assign on comboBox removes button")
-    fun minusAssignRemovesButton() {
+    fun `minus assign on comboBox removes button`() {
         val comboBox = ComboBox<Button>()
         val button = Button()
 
@@ -49,8 +46,7 @@ class ComboBoxTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("addAll on comboBox adds all buttons")
-    fun addAllAddsAllButtons() {
+    fun `addAll on comboBox adds all buttons`() {
         val comboBox = ComboBox<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -64,8 +60,7 @@ class ComboBoxTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeAll on comboBox removes all buttons")
-    fun removeAllRemovesAllButtons() {
+    fun `removeAll on comboBox removes all buttons`() {
         val comboBox = ComboBox<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -81,8 +76,7 @@ class ComboBoxTest : AbstractJavaFxTestBase() {
 
 
     @Test
-    @DisplayName("addAt on comboBox adds button at index")
-    fun addAtAddsButtonAtIndex() {
+    fun `addAt on comboBox adds button at index`() {
         val comboBox = ComboBox<Button>()
         val button = Button()
         val button1 = Button()
@@ -96,8 +90,7 @@ class ComboBoxTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeAt on comboBox removes button at index")
-    fun removeAtRemovesButtonAtIndex() {
+    fun `removeAt on comboBox removes button at index`() {
         val comboBox = ComboBox<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -108,8 +101,7 @@ class ComboBoxTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeRange on comboBox removes buttons in range")
-    fun removeRangeRemovesButtonsInRange() {
+    fun `removeRange on comboBox removes buttons in range`() {
         val comboBox = ComboBox<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -123,8 +115,7 @@ class ComboBoxTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeRange with range on comboBox removes buttons in range")
-    fun removeRangeWithRangeRemovesButtonsInRange() {
+    fun `removeRange with range on comboBox removes buttons in range`() {
         val comboBox = ComboBox<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -138,8 +129,7 @@ class ComboBoxTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("selectedItem as get on comboBox gets buttons")
-    fun selectedItemAsGetGetsButton() {
+    fun `selectedItem as get on comboBox gets buttons`() {
         val comboBox = ComboBox<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -152,8 +142,7 @@ class ComboBoxTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("selectedItem as set on comboBox sets buttons")
-    fun selectedItemAsSetSetsButton() {
+    fun `selectedItem as set on comboBox sets buttons`() {
         val comboBox = ComboBox<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -166,8 +155,7 @@ class ComboBoxTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("selectedIndex as get on comboBox gets index")
-    fun selectedIndexAsGetGetsIndex() {
+    fun `selectedIndex as get on comboBox gets index`() {
         val comboBox = ComboBox<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -180,8 +168,7 @@ class ComboBoxTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("selectedIndex as set on comboBox sets index")
-    fun selectedIndexAsSetSetsIndex() {
+    fun `selectedIndex as set on comboBox sets index`() {
         val comboBox = ComboBox<Button>()
         val button1 = Button()
         val button2 = Button()

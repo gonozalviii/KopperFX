@@ -21,14 +21,12 @@ import com.github.gonozalviii.kopperfx.extensions.*
 import javafx.scene.control.Menu
 import javafx.scene.control.MenuBar
 import org.junit.jupiter.api.Assertions.*
-import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 
 class MenuTest : AbstractJavaFxTestBase() {
 
     @Test
-    @DisplayName("plus assign on menubar adds menu")
-    fun plusAssignAddsMenu() {
+    fun `plus assign on menubar adds menu`() {
         val menuBar = MenuBar()
         val menu = Menu()
 
@@ -38,8 +36,7 @@ class MenuTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("minus assign on menubar removes menu")
-    fun minusAssignRemovesMenu() {
+    fun `minus assign on menubar removes menu`() {
         val menuBar = MenuBar()
         val menu = Menu()
         menuBar.menus.add(menu)
@@ -50,8 +47,7 @@ class MenuTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("addAll on menubar adds all menus")
-    fun addAllAddsAllMenus() {
+    fun `addAll on menubar adds all menus`() {
         val menuBar = MenuBar()
         val menu1 = Menu()
         val menu2 = Menu()
@@ -65,8 +61,7 @@ class MenuTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeAll on menubar removes all menus")
-    fun removeAllRemovesAllMenus() {
+    fun `removeAll on menubar removes all menus`() {
         val menuBar = MenuBar()
         val menu1 = Menu()
         val menu2 = Menu()
@@ -82,8 +77,7 @@ class MenuTest : AbstractJavaFxTestBase() {
 
 
     @Test
-    @DisplayName("addAt on menubar adds menu at index")
-    fun addAtAddsMenuAtIndex() {
+    fun `addAt on menubar adds menu at index`() {
         val menuBar = MenuBar()
         val menu = Menu()
         val menu1 = Menu()
@@ -97,8 +91,7 @@ class MenuTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeAt on menubar removes menu at index")
-    fun removeAtRemovesMenuAtIndex() {
+    fun `removeAt on menubar removes menu at index`() {
         val menuBar = MenuBar()
         val menu1 = Menu()
         val menu2 = Menu()
@@ -109,8 +102,7 @@ class MenuTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeRange on menubar removes menus in range")
-    fun removeRangeRemovesMenusInRange() {
+    fun `removeRange on menubar removes menus in range`() {
         val menuBar = MenuBar()
         val menu1 = Menu()
         val menu2 = Menu()
@@ -124,8 +116,7 @@ class MenuTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeRange with range on menubar removes menus in range")
-    fun removeRangeWithRangeRemovesMenusInRange() {
+    fun `removeRange with range on menubar removes menus in range`() {
         val menuBar = MenuBar()
         val menu1 = Menu()
         val menu2 = Menu()

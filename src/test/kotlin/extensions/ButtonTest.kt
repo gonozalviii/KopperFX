@@ -21,14 +21,12 @@ import com.github.gonozalviii.kopperfx.extensions.*
 import javafx.scene.control.Button
 import javafx.scene.control.ButtonBar
 import org.junit.jupiter.api.Assertions.*
-import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 
 class ButtonTest : AbstractJavaFxTestBase() {
 
     @Test
-    @DisplayName("plus assign on buttonbar adds button")
-    fun plusAssignAddsButton() {
+    fun `plus assign on buttonbar adds button`() {
         val buttonBar = ButtonBar()
         val button = Button()
 
@@ -38,8 +36,7 @@ class ButtonTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("minus assign on buttonbar removes button")
-    fun minusAssignRemovesButton() {
+    fun `minus assign on buttonbar removes button`() {
         val buttonBar = ButtonBar()
         val button = Button()
         buttonBar.buttons.add(button)
@@ -50,8 +47,7 @@ class ButtonTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("addAll on buttonbar adds all buttons")
-    fun addAllAddsAllButtons() {
+    fun `addAll on buttonbar adds all buttons`() {
         val buttonBar = ButtonBar()
         val button1 = Button()
         val button2 = Button()
@@ -65,8 +61,7 @@ class ButtonTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeAll on buttonbar removes all buttons")
-    fun removeAllRemovesAllButtons() {
+    fun `removeAll on buttonbar removes all buttons`() {
         val buttonBar = ButtonBar()
         val button1 = Button()
         val button2 = Button()
@@ -82,8 +77,7 @@ class ButtonTest : AbstractJavaFxTestBase() {
 
 
     @Test
-    @DisplayName("addAt on buttonbar adds button at index")
-    fun addAtAddsButtonAtIndex() {
+    fun `addAt on buttonbar adds button at index`() {
         val buttonBar = ButtonBar()
         val button = Button()
         val button1 = Button()
@@ -97,8 +91,7 @@ class ButtonTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeAt on buttonbar removes button at index")
-    fun removeAtRemovesButtonAtIndex() {
+    fun `removeAt on buttonbar removes button at index`() {
         val buttonBar = ButtonBar()
         val button1 = Button()
         val button2 = Button()
@@ -109,8 +102,7 @@ class ButtonTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeRange on buttonbar removes buttons in range")
-    fun removeRangeRemovesButtonsInRange() {
+    fun `removeRange on buttonbar removes buttons in range`() {
         val buttonBar = ButtonBar()
         val button1 = Button()
         val button2 = Button()
@@ -124,8 +116,7 @@ class ButtonTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeRange with range on buttonbar removes buttons in range")
-    fun removeRangeWithRangeRemovesButtonsInRange() {
+    fun `removeRange with range on buttonbar removes buttons in range`() {
         val buttonBar = ButtonBar()
         val button1 = Button()
         val button2 = Button()

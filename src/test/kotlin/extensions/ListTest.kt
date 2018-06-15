@@ -22,15 +22,13 @@ import javafx.scene.control.Button
 import javafx.scene.control.ListView
 import javafx.scene.control.SelectionMode
 import org.junit.jupiter.api.Assertions.*
-import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import java.util.function.Predicate
 
 class ListTest : AbstractJavaFxTestBase() {
 
     @Test
-    @DisplayName("plus assign on listview adds button")
-    fun plusAssignAddsButton() {
+    fun `plus assign on listview adds button`() {
         val listView = ListView<Button>()
         val button = Button()
 
@@ -40,8 +38,7 @@ class ListTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("minus assign on listview removes button")
-    fun minusAssignRemovesButton() {
+    fun `minus assign on listview removes button`() {
         val listview = ListView<Button>()
         val button = Button()
 
@@ -51,8 +48,7 @@ class ListTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("addAll on listview adds all buttons")
-    fun addAllAddsAllButtons() {
+    fun `addAll on listview adds all buttons`() {
         val listview = ListView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -66,8 +62,7 @@ class ListTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeAll on listview removes all buttons")
-    fun removeAllRemovesAllButtons() {
+    fun `removeAll on listview removes all buttons`() {
         val listview = ListView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -83,8 +78,7 @@ class ListTest : AbstractJavaFxTestBase() {
 
 
     @Test
-    @DisplayName("addAt on listview adds button at index")
-    fun addAtAddsButtonAtIndex() {
+    fun `addAt on listview adds button at index`() {
         val listview = ListView<Button>()
         val button = Button()
         val button1 = Button()
@@ -98,8 +92,7 @@ class ListTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeAt on listview removes button at index")
-    fun removeAtRemovesButtonAtIndex() {
+    fun `removeAt on listview removes button at index`() {
         val listview = ListView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -110,8 +103,7 @@ class ListTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeRange on listview removes buttons in range")
-    fun removeRangeRemovesButtonsInRange() {
+    fun `removeRange on listview removes buttons in range`() {
         val listview = ListView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -125,8 +117,7 @@ class ListTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeRange with range on listview removes buttons in range")
-    fun removeRangeWithRangeRemovesButtonsInRange() {
+    fun `removeRange with range on listview removes buttons in range`() {
         val listview = ListView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -140,8 +131,7 @@ class ListTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("getItemFrom with index on listview gets button from index")
-    fun getItemFromWithIndexGetsButtonFromIndex() {
+    fun `getItemFrom with index on listview gets button from index`() {
         val listview = ListView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -154,8 +144,7 @@ class ListTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("focusedIndex as get on listview gets focused index")
-    fun focusedIndexAsGetGetsFocusedIndex() {
+    fun `focusedIndex as get on listview gets focused index`() {
         val listview = ListView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -167,8 +156,7 @@ class ListTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("focusedIndex as set on listview sets focused index")
-    fun focusedIndexAsSetSetsFocusedIndex() {
+    fun `focusedIndex as set on listview sets focused index`() {
         val listview = ListView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -181,8 +169,7 @@ class ListTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("focusedItem on listview gets focused button")
-    fun focusedItemGetsFocusedButton() {
+    fun `focusedItem on listview gets focused button`() {
         val listview = ListView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -194,8 +181,7 @@ class ListTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("focusNext on listview focus next button")
-    fun focusNextFocusNextButton() {
+    fun `focusNext on listview focus next button`() {
         val listview = ListView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -209,8 +195,7 @@ class ListTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("focusPrevious on listview focus previous button")
-    fun focusPreviousFocusPreviousButton() {
+    fun `focusPrevious on listview focus previous button`() {
         val listview = ListView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -224,8 +209,7 @@ class ListTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("isFocused on button in listview returns true")
-    fun isFocused() {
+    fun `isFocused on button in listview returns true`() {
         val listview = ListView<Button>()
         val button1 = Button()
         listview.items.add(button1)
@@ -235,8 +219,7 @@ class ListTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("selectItem on listview selects button")
-    fun selectItemSelectsButton() {
+    fun `selectItem on listview selects button`() {
         val listview = ListView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -249,8 +232,7 @@ class ListTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("selectIndex on listview selects index")
-    fun selectIndexSelectsIndex() {
+    fun `selectIndex on listview selects index`() {
         val listview = ListView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -263,8 +245,7 @@ class ListTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("selectFirst on listview selects first index")
-    fun selectFirstSelectsFirstIndex() {
+    fun `selectFirst on listview selects first index`() {
         val listview = ListView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -277,8 +258,7 @@ class ListTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("selectLast on listview selects last index")
-    fun selectLastSelectsLastIndex() {
+    fun `selectLast on listview selects last index`() {
         val listview = ListView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -291,8 +271,7 @@ class ListTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("isSelected returns boolean")
-    fun isSelectedReturnsBoolean() {
+    fun `isSelected returns boolean`() {
         val listview = ListView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -304,8 +283,7 @@ class ListTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("selectAll on listview selects all")
-    fun selectAllSelectsAll() {
+    fun `selectAll on listview selects all`() {
         val listview = ListView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -321,8 +299,7 @@ class ListTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("selectRange on listview selects specific range")
-    fun selectRangeSelectsSpecificRange() {
+    fun `selectRange on listview selects specific range`() {
         val listview = ListView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -338,8 +315,7 @@ class ListTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("selectRange with range on listview selects specific range")
-    fun selectRangeWithRangeSelectsSpecificRange() {
+    fun `selectRange with range on listview selects specific range`() {
         val listview = ListView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -355,8 +331,7 @@ class ListTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("contains should return boolean")
-    fun containsShouldReturnBoolean() {
+    fun `contains should return boolean`() {
         val listview = ListView<Button>()
         val button1 = Button()
         val button2 = Button()
@@ -367,8 +342,7 @@ class ListTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("filtered should create filteredListWrapper")
-    fun filteredShouldCreateFilteredListWrapper() {
+    fun `filtered should create filteredListWrapper`() {
         val listview = ListView<String>()
         val testString1 = "TestString1"
         val testString2 = "TestString2"

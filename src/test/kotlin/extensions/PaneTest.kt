@@ -21,14 +21,12 @@ import com.github.gonozalviii.kopperfx.extensions.*
 import javafx.scene.control.Button
 import javafx.scene.layout.Pane
 import org.junit.jupiter.api.Assertions.*
-import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 
 class PaneTest : AbstractJavaFxTestBase() {
 
     @Test
-    @DisplayName("plus assign on pane adds button")
-    fun plusAssignAddsButton() {
+    fun `plus assign on pane adds button`() {
         val pane = Pane()
         val button = Button()
 
@@ -38,8 +36,7 @@ class PaneTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("minus assign on pane removes button")
-    fun minusAssignRemovesButton() {
+    fun `minus assign on pane removes button`() {
         val pane = Pane()
         val button = Button()
         pane.children.add(button)
@@ -50,8 +47,7 @@ class PaneTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("clear on pane removes all included buttons")
-    fun clearRemovesAllIncludeButtons() {
+    fun `clear on pane removes all included buttons`() {
         val pane = Pane()
         val button1 = Button()
         val button2 = Button()
@@ -64,8 +60,7 @@ class PaneTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("addAll on pane adds all buttons")
-    fun addAllAddsAllButtons() {
+    fun `addAll on pane adds all buttons`() {
         val pane = Pane()
         val button1 = Button()
         val button2 = Button()
@@ -79,8 +74,7 @@ class PaneTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeAll on pane removes all buttons")
-    fun removeAllRemovesAllButtons() {
+    fun `removeAll on pane removes all buttons`() {
         val pane = Pane()
         val button1 = Button()
         val button2 = Button()
@@ -95,8 +89,7 @@ class PaneTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("addAt on pane adds button at index")
-    fun addAtAddsButtonAtIndex() {
+    fun `addAt on pane adds button at index`() {
         val pane = Pane()
         val button = Button()
         val button1 = Button()
@@ -110,8 +103,7 @@ class PaneTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeAt on pane removes button at index")
-    fun removeAtRemovesButtonAtIndex() {
+    fun `removeAt on pane removes button at index`() {
         val pane = Pane()
         val button1 = Button()
         val button2 = Button()
@@ -122,8 +114,7 @@ class PaneTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeRange on pane removes buttons in range")
-    fun removeRangeRemovesButtonsInRange() {
+    fun `removeRange on pane removes buttons in range`() {
         val pane = Pane()
         val button1 = Button()
         val button2 = Button()
@@ -137,8 +128,7 @@ class PaneTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeRange with range on pane removes buttons in range")
-    fun removeRangeWithRangeRemovesButtonsInRange() {
+    fun `removeRange with range on pane removes buttons in range`() {
         val pane = Pane()
         val button1 = Button()
         val button2 = Button()

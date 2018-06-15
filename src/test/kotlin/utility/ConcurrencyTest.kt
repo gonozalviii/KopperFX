@@ -23,7 +23,6 @@ import com.github.gonozalviii.kopperfx.utility.task
 import org.junit.jupiter.api.AfterAll
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertTimeout
-import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import java.time.Duration
 import java.util.concurrent.Executors
@@ -43,8 +42,7 @@ class ConcurrencyTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("create task with DSL having no return value")
-    fun createTaskNoReturnValue() {
+    fun `create task with DSL having no return value`() {
         val integer = AtomicInteger(0)
         val task = task<Unit> {
             execute {
@@ -60,8 +58,7 @@ class ConcurrencyTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("create task with DSL and integer return value")
-    fun createTaskIntegerValue() {
+    fun `create task with DSL and integer return value`() {
         val integer = AtomicInteger(5)
         val task = task<Int> {
             execute {
@@ -80,8 +77,7 @@ class ConcurrencyTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("create a task wrapped inside a service with no return value")
-    fun createTaskWithServiceNoReturnValue() {
+    fun `create a task wrapped inside a service with no return value`() {
         val integer = AtomicInteger(3)
         val service = service<Unit> {
             task {
@@ -105,8 +101,7 @@ class ConcurrencyTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("create a task wrapped inside a service with custom executor")
-    fun createTaskWithServiceCustomExecutor() {
+    fun `create a task wrapped inside a service with custom executor`() {
         val integer = AtomicInteger(3)
         val service = service<Unit>(executor) {
             task {
@@ -130,8 +125,7 @@ class ConcurrencyTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("create a task wrapped inside a service with integer as return value")
-    fun createTaskWithServiceIntegerReturnValue() {
+    fun `create a task wrapped inside a service with integer as return value`() {
         val integer = AtomicInteger(3)
         val service = service<Int> {
             task {

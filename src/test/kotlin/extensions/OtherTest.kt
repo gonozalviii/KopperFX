@@ -28,14 +28,12 @@ import javafx.stage.FileChooser
 import javafx.stage.Stage
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertTrue
-import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 
 class OtherTest : AbstractJavaFxTestBase() {
 
     @Test
-    @DisplayName("addExtensionFilter adds filter")
-    fun addExtensionFilterAddsFilter() {
+    fun `addExtensionFilter adds filter`() {
         val fileChooser = FileChooser()
 
         fileChooser.addExtensionFilter("test", "*.test")
@@ -46,8 +44,7 @@ class OtherTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("addIcons adds icon")
-    fun addIconsAddsIcon() {
+    fun `addIcons adds icon`() {
         fxThread {
             val stage = Stage()
             val image = Image("/KopperFX.png")
@@ -59,8 +56,7 @@ class OtherTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("addStylsheet adds stylesheet")
-    fun addStylesheetAddsStylesheet() {
+    fun `addStylsheet adds stylesheet`() {
         val scene = Scene(Button())
 
         scene.addStylesheet("css")

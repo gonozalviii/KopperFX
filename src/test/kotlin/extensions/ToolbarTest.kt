@@ -23,14 +23,12 @@ import javafx.scene.control.ToolBar
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
-import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 
 class ToolbarTest : AbstractJavaFxTestBase() {
 
     @Test
-    @DisplayName("plus assign on toolbar adds menu")
-    fun plusAssignAddsButton() {
+    fun `plus assign on toolbar adds menu`() {
         val toolBar = ToolBar()
         val button = Button()
 
@@ -40,8 +38,7 @@ class ToolbarTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("minus assign on toolbar removes button")
-    fun minusAssignRemovesButton() {
+    fun `minus assign on toolbar removes button`() {
         val toolBar = ToolBar()
         val button = Button()
         toolBar.items.add(button)
@@ -52,8 +49,7 @@ class ToolbarTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("addAll on toolbar adds all buttons")
-    fun addAllAddsAllButtons() {
+    fun `addAll on toolbar adds all buttons`() {
         val toolBar = ToolBar()
         val button1 = Button()
         val button2 = Button()
@@ -67,8 +63,7 @@ class ToolbarTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeAll on toolbar removes all buttons")
-    fun removeAllRemovesAllButtons() {
+    fun `removeAll on toolbar removes all buttons`() {
         val toolBar = ToolBar()
         val button1 = Button()
         val button2 = Button()
@@ -83,8 +78,7 @@ class ToolbarTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeRange on toolbar removes buttons in range")
-    fun removeRangeRemovesButtonsInRange() {
+    fun `removeRange on toolbar removes buttons in range`() {
         val toolBar = ToolBar()
         val button1 = Button()
         val button2 = Button()
@@ -98,8 +92,7 @@ class ToolbarTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    @DisplayName("removeRange with range on toolbar removes buttons in range")
-    fun removeRangeWithRangeRemovesButtonsInRange() {
+    fun `removeRange with range on toolbar removes buttons in range`() {
         val toolBar = ToolBar()
         val button1 = Button()
         val button2 = Button()
