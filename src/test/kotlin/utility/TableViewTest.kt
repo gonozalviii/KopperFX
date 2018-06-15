@@ -1,7 +1,8 @@
 package utility
 
 import base.AbstractJavaFxTestBase
-import com.github.gonozalviii.kopperfx.extensions.*
+import com.github.gonozalviii.kopperfx.extensions.getValue
+import com.github.gonozalviii.kopperfx.extensions.plusAssign
 import com.github.gonozalviii.kopperfx.utility.*
 import javafx.application.Application
 import javafx.beans.property.IntegerProperty
@@ -9,16 +10,16 @@ import javafx.beans.property.SimpleIntegerProperty
 import javafx.scene.Scene
 import javafx.scene.control.Label
 import javafx.scene.control.SelectionMode
-import javafx.scene.control.TableColumn
 import javafx.scene.control.cell.TextFieldTableCell
 import javafx.scene.layout.BorderPane
 import javafx.stage.Stage
-import javafx.util.Callback
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 
 class TableViewTest : AbstractJavaFxTestBase() {
 
     @Test
+    @Disabled
     fun buildTableView() {
         launch<TableTestApp>(arrayOf())
     }
