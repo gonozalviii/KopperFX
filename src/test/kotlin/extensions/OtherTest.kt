@@ -20,7 +20,6 @@ import base.AbstractJavaFxTestBase
 import com.github.gonozalviii.kopperfx.extensions.addExtensionFilter
 import com.github.gonozalviii.kopperfx.extensions.addIcons
 import com.github.gonozalviii.kopperfx.extensions.addStylesheet
-import com.github.gonozalviii.kopperfx.utility.fxThread
 import javafx.scene.Scene
 import javafx.scene.control.Button
 import javafx.scene.image.Image
@@ -44,14 +43,19 @@ class OtherTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    fun `addIcons adds icon`() {
-        fxThread {
-            val stage = Stage()
-            val image = Image("/KopperFX.png")
+    fun `addIcons adds icon`() = fxThreadTest {
+        lateinit var stage: Stage
+        lateinit var image: Image
+        test {
+            stage = Stage()
+            image = Image("/KopperFX.png")
 
             stage.addIcons("/KopperFX.png")
-
-            assertEquals(image.url, stage.icons[0].url, "stage should contain specific icon")
+        }
+        verify {
+            val field = Image::class.java.getDeclaredField("url")
+            field.isAccessible = true
+            assertEquals(field.get(image), field.get(stage.icons[0]), "stage should contain specific icon")
         }
     }
 
