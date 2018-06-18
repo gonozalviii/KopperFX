@@ -17,7 +17,6 @@
 package utility
 
 import base.AbstractJavaFxTestBase
-import com.github.gonozalviii.kopperfx.utility.fxThread
 import com.github.gonozalviii.kopperfx.utility.service
 import com.github.gonozalviii.kopperfx.utility.task
 import org.junit.jupiter.api.AfterAll
@@ -27,6 +26,7 @@ import org.junit.jupiter.api.Test
 import java.time.Duration
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
+import java.util.concurrent.atomic.AtomicBoolean
 import java.util.concurrent.atomic.AtomicInteger
 
 class ConcurrencyTest : AbstractJavaFxTestBase() {
@@ -58,7 +58,7 @@ class ConcurrencyTest : AbstractJavaFxTestBase() {
     }
 
     @Test
-    fun `create task with DSL and integer return value`() {
+    fun `create task with DSL and integer return value`() = fxThreadTest {
         val integer = AtomicInteger(5)
         val task = task<Int> {
             execute {
@@ -69,9 +69,12 @@ class ConcurrencyTest : AbstractJavaFxTestBase() {
 
         val result = executor.submit(task)
         result.get(1, TimeUnit.SECONDS)
-
-        fxThread {
-            assertEquals(11, task.value, "wrong return value")
+        var taskValue = 0
+        test {
+            taskValue = task.value
+        }
+        verify {
+            assertEquals(11, taskValue, "wrong return value")
             assertEquals(10, integer.get(), "value was not changed")
         }
     }
@@ -79,73 +82,81 @@ class ConcurrencyTest : AbstractJavaFxTestBase() {
     @Test
     fun `create a task wrapped inside a service with no return value`() {
         val integer = AtomicInteger(3)
+        val done = AtomicBoolean(false)
         val service = service<Unit> {
             task {
                 execute {
                     integer.set(5)
                 }
+                onSucceeded {
+                    done.set(true)
+                }
             }
         }
         assertEquals(3, integer.get(), "value was changed before task was executed")
-
         service.start()
-
-        fxThread {
-            assertTimeout(Duration.ofSeconds(5)) {
-                while (service.isRunning) {
-                }
+        assertTimeout(Duration.ofSeconds(5)) {
+            while (!done.get()) {
             }
-
-            assertEquals(5, integer.get(), "value was changed before task was executed")
         }
+        assertEquals(5, integer.get(), "wrong value after task was executed")
     }
 
     @Test
     fun `create a task wrapped inside a service with custom executor`() {
         val integer = AtomicInteger(3)
+        val done = AtomicBoolean(false)
         val service = service<Unit>(executor) {
             task {
                 execute {
                     integer.set(5)
                 }
+                onSucceeded {
+                    done.set(true)
+                }
             }
         }
         assertEquals(3, integer.get(), "value was changed before task was executed")
 
         service.start()
 
-        fxThread {
-            assertTimeout(Duration.ofSeconds(5)) {
-                while (service.isRunning) {
-                }
+        assertTimeout(Duration.ofSeconds(5)) {
+            while (!done.get()) {
             }
-
-            assertEquals(5, integer.get(), "value was changed before task was executed")
         }
+
+        assertEquals(5, integer.get(), "wrong value after task was executed")
     }
 
     @Test
-    fun `create a task wrapped inside a service with integer as return value`() {
+    fun `create a task wrapped inside a service with integer as return value`() = fxThreadTest {
         val integer = AtomicInteger(3)
+        val done = AtomicBoolean(false)
         val service = service<Int> {
             task {
                 execute {
                     integer.addAndGet(5) + 2
                 }
+                onSucceeded {
+                    done.set(true)
+                }
             }
         }
         assertEquals(3, integer.get(), "value was changed before task was executed")
 
         service.start()
 
-        fxThread {
-            assertTimeout(Duration.ofSeconds(5)) {
-                while (service.isRunning) {
-                }
+        assertTimeout(Duration.ofSeconds(5)) {
+            while (!done.get()) {
             }
-
-            assertEquals(8, integer.get(), "value was changed before task was executed")
-            assertEquals(10, service.value, "wrong return value from service")
+        }
+        var result = 0
+        test {
+            result = service.value
+        }
+        verify {
+            assertEquals(8, integer.get(), "wrong value after task was executed")
+            assertEquals(10, result, "wrong return value from service")
         }
     }
 

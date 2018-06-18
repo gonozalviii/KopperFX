@@ -41,6 +41,7 @@ abstract class AbstractJavaFxTestBase {
         fun verify(block: () -> Unit) {
             semaphore.acquire()
             block()
+            semaphore.release()
         }
 
     }

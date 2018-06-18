@@ -20,9 +20,7 @@ import base.AbstractJavaFxTestBase
 import com.github.gonozalviii.kopperfx.extensions.*
 import javafx.scene.control.Button
 import javafx.scene.control.ToolBar
-import org.junit.jupiter.api.Assertions
-import org.junit.jupiter.api.Assertions.assertFalse
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
 class ToolbarTest : AbstractJavaFxTestBase() {
@@ -88,7 +86,7 @@ class ToolbarTest : AbstractJavaFxTestBase() {
         toolBar.removeRange(0, 2)
 
         assertTrue(toolBar.items.size == 1, "toolbar should only contain one button")
-        Assertions.assertEquals(button3, toolBar.items[0], "toolbar should only contain specific button")
+        assertEquals(button3, toolBar.items[0], "toolbar should only contain specific button")
     }
 
     @Test
@@ -102,6 +100,6 @@ class ToolbarTest : AbstractJavaFxTestBase() {
         toolBar.removeRange(0..2)
 
         assertTrue(toolBar.items.size == 1, "toolbar should only contain one button")
-        Assertions.assertEquals(button3, toolBar.items[0], "toolbar should only contain specific button")
+        assertEquals(button3, toolBar.items[0], "toolbar should only contain specific button")
     }
 }
