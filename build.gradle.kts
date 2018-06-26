@@ -40,7 +40,7 @@ tasks {
     }
 
     withType<Wrapper> {
-        gradleVersion = "4.8"
+        gradleVersion = "4.8.1"
     }
 
 }
