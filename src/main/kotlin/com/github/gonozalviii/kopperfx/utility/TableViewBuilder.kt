@@ -76,8 +76,8 @@ fun <T> treeTableView(block: TreeTableView<T>.() -> Unit): TreeTableView<T> {
 }
 
 fun <T, S> TreeTableView<T>.column(name: String, field: String): TreeTableColumn<T, S> {
-    val tableColum = TreeTableColumn<T, S>(name)
-    tableColum.cellValueFactory = TreeItemPropertyValueFactory<T, S>(field)
-    this.columns += tableColum
-    return tableColum
+    val tableColumn = TreeTableColumn<T, S>(name)
+    tableColumn.cellValueFactory = TreeItemPropertyValueFactory<T, S>(field)
+    this.columns += tableColumn
+    return tableColumn
 }
