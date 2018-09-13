@@ -28,29 +28,27 @@ tasks {
         targetCompatibility = "1.8"
     }
 
-    "sourcesJar"(Jar::class) {
-        classifier = "sources"
-        from(java.sourceSets["main"].allSource)
-        dependsOn("classes")
-    }
-
     withType<Test> {
         useJUnitPlatform()
         setForkEvery(1)
     }
 
     withType<Wrapper> {
-        gradleVersion = "4.9"
+        gradleVersion = "4.10.1"
     }
 
+}
+
+val sourcesJar by tasks.registering(Jar::class) {
+    classifier = "sources"
+    from(sourceSets["main"].allSource)
 }
 
 publishing {
-    (publications) {
-        "mavenJava"(MavenPublication::class) {
+    publications {
+        register("mavenJava", MavenPublication::class) {
             from(components["java"])
-            artifact(tasks["sourcesJar"])
+            artifact(sourcesJar.get())
         }
     }
 }
-
