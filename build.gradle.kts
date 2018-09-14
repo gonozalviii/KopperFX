@@ -21,7 +21,7 @@ java {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    testImplementation("org.junit", "junit-bom", "5.2.0")
+    testImplementation("org.junit", "junit-bom", "5.3.1")
     testImplementation("org.junit.jupiter", "junit-jupiter-engine")
 }
 
