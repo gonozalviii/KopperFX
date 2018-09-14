@@ -2,7 +2,7 @@ tasks {
     withType<Test>().configureEach {
 
         beforeSuite(closureOf<TestDescriptor> {
-            if(this.parent != null && this.className != null) {
+            if(parent != null && className != null) {
                 println("Running ${this.className}")
             }
         })
