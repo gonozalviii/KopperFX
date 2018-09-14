@@ -26,16 +26,16 @@ dependencies {
 }
 
 tasks {
-    withType<KotlinCompile> {
+    withType<KotlinCompile>().configureEach {
         targetCompatibility = "1.8"
     }
 
-    withType<Test> {
+    "test"(Test::class) {
         useJUnitPlatform()
         setForkEvery(1)
     }
 
-    withType<Wrapper> {
+    withType<Wrapper>().configureEach {
         gradleVersion = "4.10.1"
     }
 

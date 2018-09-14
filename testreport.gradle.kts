@@ -1,5 +1,5 @@
 tasks {
-    withType<Test> {
+    withType<Test>().configureEach {
 
         beforeSuite(closureOf<TestDescriptor> {
             if(this.parent != null && this.className != null) {
