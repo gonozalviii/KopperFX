@@ -36,7 +36,7 @@ tasks {
     }
 
     withType<Wrapper>().configureEach {
-        gradleVersion = "4.10.1"
+        gradleVersion = "4.10.2"
     }
 
 }
