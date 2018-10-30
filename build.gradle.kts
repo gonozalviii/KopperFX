@@ -4,7 +4,7 @@ group = "com.github.gonozalviii"
 version = "0.6"
 
 plugins {
-    kotlin("jvm") version "1.2.71"
+    kotlin("jvm") version "1.3.0"
     `maven-publish`
 }
 
