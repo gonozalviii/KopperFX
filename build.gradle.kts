@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 group = "com.github.gonozalviii"
 version = "0.6"
 
@@ -26,17 +24,18 @@ dependencies {
 }
 
 tasks {
-    withType<KotlinCompile>().configureEach {
+
+    compileKotlin {
         targetCompatibility = "1.8"
     }
 
-    "test"(Test::class) {
+    test {
         useJUnitPlatform()
         setForkEvery(1)
     }
 
-    withType<Wrapper>().configureEach {
-        gradleVersion = "4.10.2"
+    wrapper {
+        gradleVersion = "5.0-rc-1"
     }
 
 }
