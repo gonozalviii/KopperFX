@@ -2,7 +2,7 @@ group = "com.github.gonozalviii"
 version = "0.6"
 
 plugins {
-    kotlin("jvm") version "1.3.0"
+    kotlin("jvm") version "1.3.10"
     `maven-publish`
 }
 
@@ -11,11 +11,6 @@ repositories {
 }
 
 apply(from = "testreport.gradle.kts")
-
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
-}
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
