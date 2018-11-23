@@ -19,11 +19,10 @@ package utility
 import com.github.gonozalviii.kopperfx.utility.launch
 import javafx.application.Platform
 import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Tag
 import org.junit.jupiter.api.Test
 
-/**
- * Created by ext_PSchoenhusen, Opitz Consulting Deutschland GmbH, on 24.04.2018
- */
+@Tag("SeparateVM")
 class PreloadTest {
 
     companion object {

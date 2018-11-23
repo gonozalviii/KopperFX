@@ -19,9 +19,10 @@ package utility
 import com.github.gonozalviii.kopperfx.utility.launch
 import javafx.application.Platform
 import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Tag
 import org.junit.jupiter.api.Test
 
-
+@Tag("SeparateVM")
 class LaunchTest {
 
     companion object {

@@ -24,11 +24,21 @@ tasks {
         targetCompatibility = "1.8"
     }
 
-    test {
-        useJUnitPlatform()
+    val testWithLaunch by registering(Test::class) {
+        useJUnitPlatform {
+            includeTags("SeparateVM")
+        }
         setForkEvery(1)
+        maxParallelForks = Runtime.getRuntime().availableProcessors()
     }
 
+    test {
+        useJUnitPlatform {
+            excludeTags("SeparateVM")
+        }
+        finalizedBy(testWithLaunch)
+    }
+    
     wrapper {
         gradleVersion = "5.0-rc-5"
     }
