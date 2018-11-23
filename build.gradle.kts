@@ -19,7 +19,7 @@ java {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    testImplementation("org.junit", "junit-bom", "5.3.1")
+    testImplementation(enforcedPlatform("org.junit:junit-bom:5.3.1"))
     testImplementation("org.junit.jupiter", "junit-jupiter-engine")
 }
 
@@ -35,7 +35,7 @@ tasks {
     }
 
     wrapper {
-        gradleVersion = "5.0-rc-1"
+        gradleVersion = "5.0-rc-5"
     }
 
 }
