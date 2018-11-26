@@ -24,9 +24,9 @@ tasks {
         targetCompatibility = "1.8"
     }
 
-    val testWithLaunch by registering(Test::class) {
+    val testWithFork by registering(Test::class) {
         useJUnitPlatform {
-            includeTags("SeparateVM")
+            includeTags("ForkVM")
         }
         setForkEvery(1)
         maxParallelForks = Runtime.getRuntime().availableProcessors()
@@ -34,9 +34,9 @@ tasks {
 
     test {
         useJUnitPlatform {
-            excludeTags("SeparateVM")
+            excludeTags("ForkVM")
         }
-        finalizedBy(testWithLaunch)
+        finalizedBy(testWithFork)
     }
     
     wrapper {

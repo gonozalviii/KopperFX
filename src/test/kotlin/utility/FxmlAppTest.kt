@@ -25,12 +25,12 @@ import javafx.scene.layout.AnchorPane
 import javafx.stage.Stage
 import org.junit.jupiter.api.Assertions.assertTimeout
 import org.junit.jupiter.api.Assertions.assertTrue
-import org.junit.jupiter.api.Tag
 import org.junit.jupiter.api.Test
+import tag.ForkVM
 import java.time.Duration
 import kotlin.concurrent.thread
 
-@Tag("SeparateVM")
+@ForkVM
 class FxmlAppTest {
 
     companion object {
