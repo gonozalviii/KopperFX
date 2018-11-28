@@ -40,7 +40,7 @@ tasks {
     }
     
     wrapper {
-        gradleVersion = "5.0-rc-5"
+        gradleVersion = "5.0"
     }
 
 }
