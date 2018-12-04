@@ -1,10 +1,10 @@
+image:https://jitpack.io/v/gonozalviii/KopperFX.svg[Release, link=https://jitpack.io/#gonozalviii/KopperFX]
+image:https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat[GitHub license, link=http://www.apache.org/licenses/LICENSE-2.0]
+
 :source-highlighter: coderay
 :version: 0.6
 
 = KopperFX
-
-image:https://jitpack.io/v/gonozalviii/KopperFX.svg[Release, link=https://jitpack.io/#gonozalviii/KopperFX]
-image:https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat[GitHub license, link=http://www.apache.org/licenses/LICENSE-2.0]
 Kotlin Wrapper for JavaFX
 
 == About
