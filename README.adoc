@@ -10,13 +10,12 @@ Kotlin Wrapper for JavaFX
 
 == About
 
-KopperFX is a Kotlin Wrapper for JavaFX, which is supposed to simplify the use of JavaFX in Kotlin. For this purpose,
-extensions have been written especially for JavaFX. The goal is to be able to write JavaFX quickly and easily without
-unnecessary intermediate calls and without changing any core JavaFX concepts.
+KopperFX is a Kotlin Wrapper for JavaFX, which is supposed to simplify the use of JavaFX in Kotlin.
+For this purpose, extensions have been written especially for JavaFX.
+The goal is to be able to write JavaFX quickly and easily without unnecessary intermediate calls and without changing any core JavaFX concepts.
 
-KopperFX was born in production use and extracted into a separate library as the same extension function 
-were used over and over in different projects. Since then a lot of additional functions and functionality has been
-added. 
+KopperFX was born in production use and extracted into a separate library as the same extension function were used over and over in different projects.
+Since then a lot of additional functions and functionality has been added.
 
 ==== Why not use TornadoFX?
 
@@ -87,6 +86,7 @@ dependencies {
 The following examples show the differences between the current usage of JavaFX in Kotlin and the usage with KopperFX.
 
 === Handling JavaFX properties
+
 [source, kotlin]
 ----
 import com.github.gonozalviii.kopperfx.extensions.*
