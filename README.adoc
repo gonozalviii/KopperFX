@@ -1,9 +1,14 @@
-[![Release](https://jitpack.io/v/gonozalviii/KopperFX.svg)](https://jitpack.io/#gonozalviii/KopperFX)
-[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
-# KopperFX
+:source-highlighter: coderay
+:version: 0.6
+
+= KopperFX
+
+image:https://jitpack.io/v/gonozalviii/KopperFX.svg[Release, link=https://jitpack.io/#gonozalviii/KopperFX]
+image:https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat[GitHub license, link=http://www.apache.org/licenses/LICENSE-2.0]
 Kotlin Wrapper for JavaFX
 
-## About
+== About
+
 KopperFX is a Kotlin Wrapper for JavaFX, which is supposed to simplify the use of JavaFX in Kotlin. For this purpose,
 extensions have been written especially for JavaFX. The goal is to be able to write JavaFX quickly and easily without
 unnecessary intermediate calls and without changing any core JavaFX concepts.
@@ -12,14 +17,15 @@ KopperFX was born in production use and extracted into a separate library as the
 were used over and over in different projects. Since then a lot of additional functions and functionality has been
 added. 
 
-#### Why not use TornadoFX?
+==== Why not use TornadoFX?
 
 When we started using Kotlin with JavaFX we of course took a look at the "lightweight" framework TornadoFX.
 And even though it contains a lot of interesting ideas there were also concepts that we absolutely did not like:
-* it forces you to learn a completely new language (DSL) to build your JavaFX application
-* it does not promote using FXML for building GUIs (though it does support it), which we think of as a killer feature especially when used with the excellent [SceneBuilder](https://gluonhq.com/products/scene-builder/)
-* it contains functionality that we do not expect in a JavaFX wrapper (injection framework, REST client, additional controls, ...)
-* the resulting code from using the DSL is not very clear or intuitive from the technical perspective (why does this work?) and thus makes debugging harder
+
+- it forces you to learn a completely new language (DSL) to build your JavaFX application
+- it does not promote using FXML for building GUIs (though it does support it), which we think of as a killer feature especially when used with the excellent https://gluonhq.com/products/scene-builder/[SceneBuilder]
+- it contains functionality that we do not expect in a JavaFX wrapper (injection framework, REST client, additional controls, ...)
+- the resulting code from using the DSL is not very clear or intuitive from the technical perspective (why does this work?) and thus makes debugging harder
 
 If you are completely new to JavaFX and want this complete package, TornadoFX might just be the thing for you.
 
@@ -28,36 +34,39 @@ We on the other hand want to address developers with experience in building Java
 Our goal is to make your life just a little bit easier when developing JavaFX applications with Kotlin without forcing stuff onto you that you do not want or need.
 
 
-## Usage
+== Usage
 
 To use KopperFX, it can be easily integrated as a dependency:
 
-**Gradle**
-```
+.*Gradle*
+[source, groovy, subs=attributes+]
+----
 repositories {
     ...
     maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-    compile 'com.github.gonozalviii:KopperFX:0.6'
+    implementation 'com.github.gonozalviii:KopperFX:{version}'
 }
-```
+----
 
-**Gradle (Kotlin)**
-```
+.*Gradle (Kotlin)*
+[source, kotlin, subs=attributes+]
+----
 repositories {
     ...
     maven("https://jitpack.io" )
 }
 
 dependencies {
-    implementation("com.github.gonozalviii:KopperFX:0.6")
+    implementation("com.github.gonozalviii:KopperFX:{version}")
 }
-```
+----
 
-**Maven**
-```
+.*Maven*
+[source, xml, subs=attributes+]
+----
 <repositories>
     <repository>
         <id>jitpack.io</id>
@@ -68,60 +77,67 @@ dependencies {
 <dependency>
     <groupId>com.github.gonozalviii</groupId>
     <artifactId>KopperFX</artifactId>
-    <version>0.6</version>
+    <version>{version}</version>
 </dependency>
-```
+----
 
-## Examples
+== Examples
 
 The following examples show the differences between the current usage of JavaFX in Kotlin and the usage with KopperFX.
 
-### Handling JavaFX properties
-```kotlin
+=== Handling JavaFX properties
+[source, kotlin]
+----
 import com.github.gonozalviii.kopperfx.extensions.*
 
 val nameProperty = SimpleStringProperty("")
 var name: String by nameProperty 
-```
+----
 
-### Adding and removing Children
+=== Adding and removing Children
 
-**Kotlin**
-```kotlin
+.*Kotlin*
+[source, kotlin]
+----
 pane.children.add(node)
 pane.children.addAll(node1, node2)
 pane.children.remove(node)
 pane.children.removeAll(node1, node2)
-```
-**KopperFX**
-```kotlin
+----
+
+.*KopperFX*
+[source, kotlin]
+----
 pane += node
 pane.addAll(node1, node2)
 pane -= node
 pane.removeAll(node1, node2)
-```
+----
 
-### Adding and removing Items
+=== Adding and removing Items
 
 **Kotlin**
-```kotlin
+[source, kotlin]
+----
 tableview.items.add(item)
 tableview.items.addAll(item1, item2)
 tableview.items.remove(item)
 tableview.items.removeAll(item1, item2)
-```
-**KopperFX**
-```kotlin
+----
+.*KopperFX*
+[source, kotlin]
+----
 tableview += item
 tableview.addAll(item1, item2)
 tableview -= item
 tableview.removeAll(item1, item2)
-```
+----
 
-### Misc
+=== Misc
 
-**Kotlin**
-```kotlin
+.*Kotlin*
+[source, kotlin]
+----
 //Selected Item
 val item = tableView.selectionModel.selectedItem
 tableView.selectionModel.select(item)
@@ -142,9 +158,10 @@ object : AnimationTimer() {
                 println("Kotlin")
         }
 }.start()
-```
-**KopperFX**
-```kotlin
+----
+.*KopperFX*
+[source, kotlin]
+----
 //Selected Item
 val item = tableView.selectedItem
 tableview.selectedItem = item
@@ -161,8 +178,8 @@ fxThread { println("KopperFX") }
 
 //AnimationTimer
 animationTimer { println("KopperFX") }
-```
+----
 
-## Own ideas?
+== Own ideas?
 
 Please use the Github issue system :)
