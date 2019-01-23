@@ -21,9 +21,6 @@ import javafx.embed.swing.JFXPanel
 import org.junit.jupiter.api.BeforeAll
 import java.util.concurrent.Semaphore
 
-/**
- * Created by ext_PSchoenhusen, Opitz Consulting Deutschland GmbH, on 10.04.2018
- */
 abstract class AbstractJavaFxTestBase {
 
     companion object {
