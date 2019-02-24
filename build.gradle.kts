@@ -3,6 +3,7 @@ version = "0.6"
 
 plugins {
     kotlin("jvm") version "1.3.20"
+    id("org.openjfx.javafxplugin") version "0.0.7"
     `maven-publish`
 }
 
@@ -14,8 +15,11 @@ apply(from = "testreport.gradle.kts")
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    testImplementation(enforcedPlatform("org.junit:junit-bom:5.3.1"))
-    testImplementation("org.junit.jupiter", "junit-jupiter-engine")
+    testImplementation("org.junit.jupiter", "junit-jupiter", "5.4.0")
+}
+
+javafx {
+    modules = listOf("javafx.web", "javafx.fxml", "javafx.swing")
 }
 
 tasks {
@@ -40,7 +44,7 @@ tasks {
     }
     
     wrapper {
-        gradleVersion = "5.2"
+        gradleVersion = "5.2.1"
     }
 
 }
