@@ -2,7 +2,7 @@ group = "com.github.gonozalviii"
 version = "0.6"
 
 plugins {
-    kotlin("jvm") version "1.3.20"
+    kotlin("jvm") version "1.3.60"
     `maven-publish`
 }
 
@@ -40,7 +40,7 @@ tasks {
     }
     
     wrapper {
-        gradleVersion = "5.2"
+        gradleVersion = "6.0.1"
     }
 
 }
