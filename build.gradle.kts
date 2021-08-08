@@ -2,6 +2,7 @@ group = "com.github.gonozalviii"
 version = "0.6"
 
 plugins {
+    java
     kotlin("jvm") version "1.3.20"
     id("org.openjfx.javafxplugin") version "0.0.10"
     `maven-publish`
@@ -21,6 +22,11 @@ dependencies {
 javafx {
     version = "11"
     modules = listOf("javafx.web", "javafx.fxml", "javafx.swing")
+}
+
+java {
+    targetCompatibility = JavaVersion.VERSION_11
+    sourceCompatibility = JavaVersion.VERSION_11
 }
 
 tasks {
