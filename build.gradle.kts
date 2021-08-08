@@ -3,7 +3,7 @@ version = "0.6"
 
 plugins {
     kotlin("jvm") version "1.3.20"
-    id("org.openjfx.javafxplugin") version "0.0.7"
+    id("org.openjfx.javafxplugin") version "0.0.10"
     `maven-publish`
 }
 
@@ -19,6 +19,7 @@ dependencies {
 }
 
 javafx {
+    version = "11"
     modules = listOf("javafx.web", "javafx.fxml", "javafx.swing")
 }
 
