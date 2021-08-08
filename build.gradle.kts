@@ -21,7 +21,8 @@ dependencies {
 
 javafx {
     version = "11"
-    modules = listOf("javafx.web", "javafx.fxml", "javafx.swing")
+    modules("javafx.web", "javafx.fxml", "javafx.swing")
+    configuration = "compileOnly"
 }
 
 java {
