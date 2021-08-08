@@ -26,7 +26,7 @@ javafx {
 tasks {
 
     compileKotlin {
-        targetCompatibility = "1.8"
+        targetCompatibility = "11"
     }
 
     val testWithFork by registering(Test::class) {
